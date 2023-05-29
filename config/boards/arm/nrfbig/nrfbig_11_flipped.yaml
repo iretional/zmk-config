@@ -1,5 +1,5 @@
-identifier: nrfmicro_11_flipped
-name: nrfmicro_11_flipped
+identifier: nrfbig_11_flipped
+name: nrfbig_11_flipped
 type: mcu
 arch: arm
 toolchain:

@@ -1,5 +1,5 @@
-identifier: nrfmicro_13
-name: nrfmicro_13
+identifier: nrfbig_13
+name: nrfbig_13
 type: mcu
 arch: arm
 toolchain:

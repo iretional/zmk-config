@@ -1,10 +1,10 @@
 file_format: "1"
-id: nrfmicro_11_flipped
+id: nrfbig_11_flipped
 name: nRFMicro 1.1 (flipped)
 type: board
 arch: arm
 outputs:
   - usb
   - ble
-url: https://github.com/joric/nrfmicro/
+url: https://github.com/joric/nrfbig/
 exposes: [pro_micro]
