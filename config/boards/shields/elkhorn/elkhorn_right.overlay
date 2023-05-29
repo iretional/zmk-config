@@ -18,14 +18,10 @@ P0.28 = C6
 P0.02 = C7
 P0.03 = C8
  */
- 
+
 #include "elkhorn.dtsi"
 
 &default_transform {
-    col-offset = <8>;
-};
-
-&five_column_transform {
     col-offset = <8>;
 };
 

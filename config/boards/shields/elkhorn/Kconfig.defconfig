@@ -13,19 +13,6 @@ if SHIELD_ELKHORN_LEFT || SHIELD_ELKHORN_RIGHT
 config ZMK_SPLIT
     default y
 
-if ZMK_DISPLAY
-
-config I2C
-    default n
-
-config SSD1306
-    default n
-
-config SSD1306_REVERSE_MODE
-    default n
-
-endif # ZMK_DISPLAY
-
 if LVGL
 
 config LV_Z_VDB_SIZE
