@@ -18,7 +18,7 @@
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
         
-        td_bt1: tap_dance_par {
+        td_bt1: tap_dance_esc_bootloader {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_ESC_BOOTLOADER";
             #binding-cells = <0>;
@@ -26,7 +26,7 @@
             bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&bootloader>;
         };
 
-        td_bt2: tap_dance_par {
+        td_bt2: tap_dance_lang2_bootloader {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_LANG1_BOOTLOADER";
             #binding-cells = <0>;
