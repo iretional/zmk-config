@@ -22,7 +22,7 @@
    &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp LGUI                                 &kp COMMA &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
    &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T     &kp LSHFT &kp LALT             &kp SPACE &kp RSHFT &kp Y     &kp U     &kp I     &kp O     &kp P     &kp EQUAL
    &kp CAPS  &kp A     &kp S     &kp D     &kp F     &kp G     &kp SPACE &kp LCTRL            &kp SPACE &kp SPACE &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL &kp LALT  &kp Z     &kp X     &kp C     &kp V     &kp BSPC  &mo 1                &mo 2     &kp RET   &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp LANG1
+   &kp LCTRL &kp LALT  &kp Z     &kp X     &kp C     &kp V     &kp BSPC  &mo 1                &mo 1     &kp RET   &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp LANG1
                         >;
                 };
                 lower_layer {
@@ -33,10 +33,10 @@
 // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
 //                    | GUI |     | SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp LGUI                                 &kp COMMA &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
-   &kp TAB   &trans    &kp HOME  &kp UP    &kp END   &trans    &kp LSHFT &kp LALT             &sys_reset &kp RSHFT &kp Y     &kp U     &kp I     &kp O     &kp P     &kp EQUAL
-   &kp CAPS  &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &kp SPACE &kp LCTRL            &bootloader &kp SPACE &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL &kp LALT  &trans    &kp X     &trans    &trans    &kp BSPC  &mo 1                &trans     &kp RET   &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp LANG1
+   &kp ESC   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp LGUI                                     &kp COMMA &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+   &kp TAB   &trans    &kp HOME  &kp UP    &kp END   &trans    &kp LSHFT &sys_reset           &sys_reset    &kp RSHFT &kp Y     &kp U     &kp I     &kp O     &kp P     &kp EQUAL
+   &kp CAPS  &trans    &kp LEFT  &kp DOWN  &kp RIGHT &trans    &kp SPACE &bootloader          &bootloader   &kp SPACE &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL &kp LALT  &trans    &kp X     &trans    &trans    &kp BSPC  &trans               &trans        &kp RET   &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp LANG1
                         >;
                 };
 
