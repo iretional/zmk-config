@@ -62,11 +62,11 @@
 // | CTRL | ALT |  Z  |  X  |  C  |  V  | LWR | CTRL|   | RSE | RSE |  B  |  N  |  M  |  .  |  /  | LANG |
 //              | WIN | SFT | SPC | BSP | ALT |               |  ?  | ETR | SPC | SFT |  ,  |
                         bindings = <
-   &td_bt1   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
+   &kp ESC   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &trans       &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp KP_EQUAL
    &kp CAPS  &trans       &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &trans       &trans       &trans     &kp LT    &trans    &kp LCTRL      &kp DEL    &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &td_bt2
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp BSLH  &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
+   &kp LCTRL &kp LALT     &trans       &trans       &trans     &kp LT    &trans    &kp LCTRL      &kp DEL    &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LNLCK &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
                         >;
                 };
 
@@ -78,11 +78,11 @@
 // | CTRL | ALT |  Z  |  X  |  C  |  V  | LWR | CTRL|   | RSE | RSE |  B  |  N  |  M  |  .  |  /  | LANG |
 //              | WIN | SFT | SPC | BSP | ALT |               |  ?  | ETR | SPC | SFT |  ,  |
                         bindings = <
-   &td_bt1   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
+   &kp ESC   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &trans       &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp KP_EQUAL
    &kp CAPS  &trans       &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &trans       &trans       &trans     &kp LT    &trans    &kp LCTRL      &kp DEL    &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &td_bt2
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp BSLH  &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
+   &kp LCTRL &kp LALT     &trans       &trans       &trans     &kp LT    &trans    &kp LCTRL      &kp DEL    &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LNLCK &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
                         >;
                 };
         };
