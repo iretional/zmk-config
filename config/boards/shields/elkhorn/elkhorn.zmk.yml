@@ -1,0 +1,14 @@
+file_format: "1"
+id: elkhorn
+name: Elkhorn
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+siblings:
+  - elkhorn_left
+  - elkhorn_right
