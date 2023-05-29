@@ -1,5 +1,5 @@
-identifier: nrfbig_11_flipped
-name: nrfbig_11_flipped
+identifier: elkhead_11_flipped
+name: elkhead_11_flipped
 type: mcu
 arch: arm
 toolchain:

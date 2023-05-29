@@ -13,7 +13,7 @@
 #
 ---
 include:
-  - board: nrfbig_13_52833
+  - board: elkhead_13_52833
     shield: kyria_rev3_left
-  - board: nrfbig_13_52833
+  - board: elkhead_13_52833
     shield: kyria_rev3_right

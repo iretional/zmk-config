@@ -7,11 +7,11 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include "arduino_pro_micro_pins_flipped.dtsi"
-#include "nrfbig-flipped-pinctrl.dtsi"
+#include "elkhead-flipped-pinctrl.dtsi"
 
 / {
-    model = "nrfbig";
-    compatible = "joric,nrfbig";
+    model = "elkhead";
+    compatible = "joric,elkhead";
 
     chosen {
         zephyr,code-partition = &code_partition;

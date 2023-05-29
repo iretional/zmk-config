@@ -1,10 +1,10 @@
 file_format: "1"
-id: nrfbig_13
+id: elkhead_13
 name: nRFMicro 1.3/1.4
 type: board
 arch: arm
 outputs:
   - usb
   - ble
-url: https://github.com/joric/nrfbig/
+url: https://github.com/joric/elkhead/
 exposes: [pro_micro]
