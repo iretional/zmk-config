@@ -3,7 +3,22 @@
  *
  * SPDX-License-Identifier: MIT
  */
-
+ /*
+-elkhead v2 gpio-
+P0.15 = R1
+P0.17 = R2
+P0.11 = R3
+P1.09 = R4
+P0.20 = C1
+P0.04 = C2
+P0.31 = C3
+P0.30 = C4
+P0.29 = C5
+P0.28 = C6
+P0.02 = C7
+P0.03 = C8
+ */
+ 
 #include "elkhorn.dtsi"
 
 &default_transform {
@@ -16,13 +31,13 @@
 
 &kscan0 {
     col-gpios
-        = <&pro_micro 4 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 5 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 6 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 7 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 8 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 9 GPIO_ACTIVE_HIGH>
+        = <&pro_micro 11 GPIO_ACTIVE_HIGH>
         , <&pro_micro 10 GPIO_ACTIVE_HIGH>
-        , <&pro_micro 11 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 9 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 8 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 7 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 6 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 5 GPIO_ACTIVE_HIGH>
+        , <&pro_micro 4 GPIO_ACTIVE_HIGH>
         ;
 };

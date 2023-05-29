@@ -4,6 +4,22 @@
  * SPDX-License-Identifier: MIT
  */
 
+ /*
+-elkhead v2 gpio-
+P0.15 = R1
+P0.17 = R2
+P0.11 = R3
+P1.09 = R4
+P0.20 = C1
+P0.04 = C2
+P0.31 = C3
+P0.30 = C4
+P0.29 = C5
+P0.28 = C6
+P0.02 = C7
+P0.03 = C8
+ */
+
 #include "elkhorn.dtsi"
 
 &kscan0 {
