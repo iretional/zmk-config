@@ -25,12 +25,12 @@ config ZMK_USB
     default y
 
 config PINMUX
-    default y
+    default n
 
 if BOARD_ELKHEAD_13 || BOARD_ELKHEAD_13_52833
 
 config BOARD_ELKHEAD_CHARGER
-    default y
+    default n
 
 endif # BOARD_ELKHEAD_13 || BOARD_ELKHEAD_13_52833
 
