@@ -3,18 +3,6 @@
 # Copyright (c) 2020 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
-config BOARD_ELKHEAD_11
-    bool "elkhead_11"
-    depends on SOC_NRF52840_QIAA
-
-config BOARD_ELKHEAD_11_FLIPPED
-    bool "elkhead_11_flipped"
-    depends on SOC_NRF52840_QIAA
-
-config BOARD_ELKHEAD_13
-    bool "elkhead_13"
-    depends on SOC_NRF52840_QIAA
-
 config BOARD_ELKHEAD_13_52833
     bool "elkhead_13_52833"
     depends on SOC_NRF52833_QIAA

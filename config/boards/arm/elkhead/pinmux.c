@@ -14,14 +14,25 @@
 static int pinmux_elkhead_init(const struct device *port) {
     ARG_UNUSED(port);
 
-#if (CONFIG_BOARD_ELKHEAD_13 || CONFIG_BOARD_ELKHEAD_13_52833)
+#if (CONFIG_BOARD_NRFMICRO_13 || CONFIG_BOARD_NRFMICRO_13_52833)
+    const struct device *p0 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
     const struct device *p1 = DEVICE_DT_GET(DT_NODELABEL(gpio1));
-#if CONFIG_BOARD_ELKHEAD_CHARGER
-    gpio_pin_configure(p1, 2, GPIO_OUTPUT);
-    gpio_pin_set(p1, 2, 0);
-#else
-    gpio_pin_configure(p1, 2, GPIO_INPUT);
-#endif
+    gpio_pin_configure(p0, 5, GPIO_INPUT);
+    gpio_pin_configure(p0, 9, GPIO_OUTPUT);
+
+    gpio_pin_configure(p0, 15, GPIO_INPUT);
+    gpio_pin_configure(p0, 17, GPIO_INPUT);
+    gpio_pin_configure(p0, 11, GPIO_INPUT);
+    gpio_pin_configure(p1, 9, GPIO_INPUT);
+
+    gpio_pin_configure(p0, 20, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 4, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 31, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 30, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 29, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 28, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 2, GPIO_OUTPUT);
+    gpio_pin_configure(p0, 3, GPIO_OUTPUT);
 #endif
     return 0;
 }
