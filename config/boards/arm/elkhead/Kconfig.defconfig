@@ -25,7 +25,7 @@ config ZMK_USB
     default y
 
 config PINMUX
-    default n
+    default y
 
 if BOARD_ELKHEAD_13_52833
 
