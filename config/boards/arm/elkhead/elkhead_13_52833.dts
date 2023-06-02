@@ -11,7 +11,7 @@
 
 / {
     model = "elkhead";
-    compatible = "joric,elkhead";
+    compatible = "poli,elkhead";
 
     chosen {
         zephyr,code-partition = &code_partition;

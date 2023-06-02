@@ -11,19 +11,19 @@
 #include <zephyr/sys/sys_io.h>
 #include <zephyr/devicetree.h>
 
-static int pinmux_elkhead_init(const struct device *port) {
+static int pinmux_elkhead_init(const struct device *port)
+{
     ARG_UNUSED(port);
 
-#if (CONFIG_BOARD_ELKHEAD_13_52833)
     const struct device *p0 = DEVICE_DT_GET(DT_NODELABEL(gpio0));
     const struct device *p1 = DEVICE_DT_GET(DT_NODELABEL(gpio1));
     gpio_pin_configure(p0, 5, GPIO_INPUT);
     gpio_pin_configure(p0, 9, GPIO_OUTPUT);
 
-    gpio_pin_configure(p0, 15, GPIO_INPUT);
-    gpio_pin_configure(p0, 17, GPIO_INPUT);
-    gpio_pin_configure(p0, 11, GPIO_INPUT);
-    gpio_pin_configure(p1, 9, GPIO_INPUT);
+    gpio_pin_configure(p0, 15, GPIO_INPUT | GPIO_PULL_DOWN);
+    gpio_pin_configure(p0, 17, GPIO_INPUT | GPIO_PULL_DOWN);
+    gpio_pin_configure(p0, 11, GPIO_INPUT | GPIO_PULL_DOWN);
+    gpio_pin_configure(p1, 9, GPIO_INPUT | GPIO_PULL_DOWN);
 
     gpio_pin_configure(p0, 20, GPIO_OUTPUT);
     gpio_pin_configure(p0, 4, GPIO_OUTPUT);
@@ -33,7 +33,7 @@ static int pinmux_elkhead_init(const struct device *port) {
     gpio_pin_configure(p0, 28, GPIO_OUTPUT);
     gpio_pin_configure(p0, 2, GPIO_OUTPUT);
     gpio_pin_configure(p0, 3, GPIO_OUTPUT);
-#endif
+
     return 0;
 }
 

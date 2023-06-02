@@ -6,5 +6,4 @@ arch: arm
 outputs:
   - usb
   - ble
-url: https://github.com/joric/elkhead/
-exposes: [pro_micro]
+url: https://github.com/poli/elkhead/
