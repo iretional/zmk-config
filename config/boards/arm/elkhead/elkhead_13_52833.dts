@@ -17,6 +17,8 @@
         zephyr,code-partition = &code_partition;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
+		zephyr,storage_partition = &storage_partition;
+		zephyr,boot_partition = &boot_partition;
         zmk,battery = &vbatt;
     };
 
