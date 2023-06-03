@@ -147,7 +147,7 @@
         // momentary layer keys to force compilation.
         lock_layer {
             bindings = <
-   &none      &none        &none        &none        &none        &none                                                          &reset      &none      &none      &none     &none     &none 
+   &none      &none        &none        &none        &none        &none                                                          &sys_reset      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none     &none     &none                &none       &none     &none      &none      &none      &none     &none     &none
