@@ -11,7 +11,6 @@
 
 #define LOWER 1
 #define RAISE 2
-#define THEN 3
 #define LOCK 4
 
 #define VOL_DN C_VOL_DN
@@ -47,7 +46,6 @@
           timeout-ms = <2500>;
           key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
           bindings = <&tog LOCK>;
-          slow-release;
         };
     };
 
@@ -67,7 +65,7 @@
     };
     
     conditional_layers {
-    compatible = "zmk,conditional-layers";
+        compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <1 2>;
             then-layer = <3>;
@@ -154,6 +152,5 @@
                            &none        &none        &none        &none     &none                                      &none     &none      &none      &none      &none  
             >;
         };
-
     };
 };
