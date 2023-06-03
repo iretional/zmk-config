@@ -6,7 +6,23 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
+
+#define LOWER 1
+#define RAISE 2
+#define THEN 3
+#define LOCK 4
+
+#define VOL_DN C_VOL_DN
+#define VOL_UP C_VOL_UP
+#define CALC C_AL_CALC
+
+#define BT0 BT_SEL 0
+#define BT1 BT_SEL 1
+#define BT2 BT_SEL 2
+#define BT3 BT_SEL 3
+#define BT4 BT_SEL 4
 
 / {
     behaviors {
@@ -17,21 +33,21 @@
             tapping-term-ms = <200>;
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
-        
-        td_bt1: tap_dance_esc_bootloader {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_ESC_BOOTLOADER";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp ESC>, <&kp ESC>, <&kp ESC>, <&bootloader>;
-        };
+    };
 
-        td_bt2: tap_dance_lang2_bootloader {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_LANG1_BOOTLOADER";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp LANG2>, <&kp LANG2>, <&kp LANG2>, <&bootloader>;
+    combos {
+        compatible = "zmk,combos";
+        // The Lower+Raise+Backspace combo toggles a "soft lock" mode that
+        // effectively disables keystrokes (e.g., for when the keyboard is in
+        // storage or being transported).
+        //
+        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
+        // this combo can be replaced by a native behavior in the future.
+        combo_lock {
+          timeout-ms = <1000>;
+          key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
+          bindings = <&tog LOCK>;
+          slow-release;
         };
     };
 
@@ -84,7 +100,7 @@
 // | CTRL | ALT |  Z  |  X  |  C  |  V  | LWR | CTRL|   | RSE | RSE |  B  |  N  |  M  |  .  |  /  | LANG |
 //              | WIN | SFT | SPC | BSP | ALT |               |  ?  | ETR | SPC | SFT |  ,  |
             bindings = <
-   &kp ESC   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
    &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
    &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &none     &kp LCTRL      &kp KP_NUM &none     &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2   
@@ -100,7 +116,7 @@
 // | CTRL | ALT |  Z  |  X  |  C  |  V  | LWR | CTRL|   | RSE | RSE |  B  |  N  |  M  |  .  |  /  | LANG |
 //              | WIN | SFT | SPC | BSP | ALT |               |  ?  | ETR | SPC | SFT |  ,  |
                 bindings = <
-   &kp ESC   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
    &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
    &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &none     &kp LCTRL      &kp KP_NUM &none     &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2  
@@ -117,11 +133,25 @@
 // | CTRL | ALT |  Z  |  X  |  C  |  V  | LWR | CTRL|   | RSE | RSE |  B  |  N  |  M  |  .  |  /  | LANG |
 //              | WIN | SFT | SPC | BSP | ALT |               |  ?  | ETR | SPC | SFT |  ,  |
             bindings = <
-   &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6    &kp F7    &kp F8    &kp F9    &kp F10   &kp F11
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4                                                   &none     &none     &none     &none     &none     &kp F12
-   &trans     &none        &none        &none        &none        &none                                                          &none     &none     &none     &none     &none     &none 
-   &trans     &trans       &none        &none        &none        &none     &none     &trans               &none       &none     &none     &none     &none     &none     &none     &none
-                           &zed_capt    &trans       &trans       &none     &trans                                     &none     &none     &none     &none     &none  
+   &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
+   &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &kp CALC  &kp F12
+   &trans     &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
+   &trans     &trans       &none        &none        &none        &none     &none     &trans               &none       &none     &none      &none      &none      &none     &none     &none
+                           &zed_capt    &trans       &trans       &none     &trans                                     &none     &none      &none      &none      &none  
+            >;
+        };
+
+        // Ideally, this layer would be completely empty, but as of June 2021,
+        // empty layers fail to compile due to
+        // https://github.com/zmkfirmware/zmk/issues/241. As such, we add no-op
+        // momentary layer keys to force compilation.
+        lock_layer {
+            bindings = <
+   &none      &none        &none        &none        &none        &none                                                          &reset      &none      &none      &none     &none     &none 
+   &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
+   &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
+   &none      &none        &none        &none        &none        &none     &none     &none                &none       &none     &none      &none      &none      &none     &none     &none
+                           &none        &none        &none        &none     &none                                      &none     &none      &none      &none      &none  
             >;
         };
 
