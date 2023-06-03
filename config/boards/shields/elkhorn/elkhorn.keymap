@@ -44,7 +44,7 @@
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
         // this combo can be replaced by a native behavior in the future.
         combo_lock {
-          timeout-ms = <1000>;
+          timeout-ms = <2500>;
           key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
           bindings = <&tog LOCK>;
           slow-release;
@@ -147,7 +147,7 @@
         // momentary layer keys to force compilation.
         lock_layer {
             bindings = <
-   &none      &none        &none        &none        &none        &none                                                          &sys_reset      &none      &none      &none     &none     &none 
+   &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none     &none     &none                &none       &none     &none      &none      &none      &none     &none     &none
