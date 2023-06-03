@@ -34,21 +34,6 @@
         };
     };
 
-    combos {
-        compatible = "zmk,combos";
-        // The Lower+Raise+Backspace combo toggles a "soft lock" mode that
-        // effectively disables keystrokes (e.g., for when the keyboard is in
-        // storage or being transported).
-        //
-        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
-        // this combo can be replaced by a native behavior in the future.
-        combo_lock {
-          timeout-ms = <2500>;
-          key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
-          bindings = <&tog LOCK>;
-        };
-    };
-
     macros {
         zed_capt: zed_capt {
             label = "zed_capt";
