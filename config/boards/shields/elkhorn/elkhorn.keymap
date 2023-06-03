@@ -33,14 +33,9 @@
             bindings = <&kp LPAR>, <&kp RPAR>;
         };
     };
-
     
     combos {
         compatible = "zmk,combos";
-        // The Lower+Raise+Backspace combo toggles a "soft lock" mode that
-        // effectively disables keystrokes (e.g., for when the keyboard is in
-        // storage or being transported).
-        //
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
         // this combo can be replaced by a native behavior in the future.
         combo_lock {
@@ -80,8 +75,8 @@
    &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
    &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp EQUAL
    &kp CAPS  &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LCTRL             &kp BSLH   &mo 2     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp LANG1    
-                       &kp LGUI  &kp LSHFT &kp SPACE &kp BSPC  &kp LALT                                   &kp LANG1 &kp RET   &kp SPACE &kp RSHFT &kp COMMA 
+   &kp LCTRL &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LCTRL             &kp BSLH   &mo 2     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp LANG1    
+                       &kp LGUI  &kp LSHFT &kp SPACE &kp BSPC  &kp LALT                                   &kp LANG1 &kp RET   &kp SPACE &kp RSHFT &kp FSLH 
             >;
         };
 
@@ -90,8 +85,8 @@
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
    &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2   
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
+   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DOT   &kp LANG2   
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp BSLH 
             >;
         };
 
@@ -100,8 +95,8 @@
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
    &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
    &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp BSLH     &kp LANG2  
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp KP_COMMA 
+   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DOT   &kp LANG2   
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp BSLH 
             >;
         };
 
@@ -109,17 +104,13 @@
         then_layer {
             bindings = <
    &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
-   &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &kp CALC  &kp F12
+   &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
    &trans     &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
-   &trans     &trans       &none        &none        &none        &none     &none     &trans               &none       &none     &none      &none      &none      &none     &none     &none
+   &trans     &trans       &none        &none        &kp CALC     &none     &none     &trans               &none       &none     &none      &none      &none      &none     &none     &none
                            &zed_capt    &trans       &trans       &none     &trans                                     &none     &none      &none      &none      &none  
             >;
         };
 
-        // Ideally, this layer would be completely empty, but as of June 2021,
-        // empty layers fail to compile due to
-        // https://github.com/zmkfirmware/zmk/issues/241. As such, we add no-op
-        // momentary layer keys to force compilation.
         lock_layer {
             bindings = <
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
