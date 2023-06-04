@@ -22,8 +22,6 @@ config PINMUX
 
 if BOARD_ELKHEAD_13_52833
 
-config BOARD_ELKHEAD_CHARGER
-    default n
 
 endif # BOARD_ELKHEAD_13_52833
 
