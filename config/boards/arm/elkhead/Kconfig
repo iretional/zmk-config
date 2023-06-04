@@ -4,7 +4,3 @@ config BOARD_ENABLE_DCDC
     default n
     depends on (BOARD_ELKHEAD_11 || BOARD_ELKHEAD_11_FLIPPED || BOARD_ELKHEAD_13 || BOARD_ELKHEAD_13_52833)
 
-config BOARD_ELKHEAD_CHARGER
-    bool "Enable battery charger"
-    default n
-    depends on (BOARD_ELKHEAD_13 || BOARD_ELKHEAD_13_52833)
