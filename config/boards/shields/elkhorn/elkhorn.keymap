@@ -11,7 +11,12 @@
 
 #define LOWER 1
 #define RAISE 2
-#define LOCK 4
+#define THEN 3
+#define LOCK  4
+
+
+#define KP_MUL KP_MULTIPLY
+#define KP_DIV KP_DIVIDE
 
 #define VOL_DN C_VOL_DN
 #define VOL_UP C_VOL_UP
@@ -31,6 +36,20 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp LPAR>, <&kp RPAR>;
+        };
+        td_pnq: tap_dance_plus_equal {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_PLUS_EQUAL";
+            #binding-cells = <0>;
+            tapping-term-ms = <120>;
+            bindings = <&kp KP_PLUS>, <&kp EQUAL>;
+        };
+        td_mnc: tap_dance_minus_clear {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MINUS_CLEAR";
+            #binding-cells = <0>;
+            tapping-term-ms = <120>;
+            bindings = <&kp KP_MINUS>, <&kp CLEAR2>;
         };
     };
     
@@ -74,29 +93,29 @@
             bindings = <
    &kp GRAVE &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
    &kp TAB   &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P     &kp EQUAL
-   &kp CAPS  &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LCTRL             &kp BSLH   &mo 2     &kp B     &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH    
-                       &kp LGUI  &kp LSHFT &kp SPACE &kp BSPC  &kp LALT                                   &kp LANG1 &kp RET   &kp SPACE &kp RSHFT &kp LANG1 
+   &kp LALT  &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH  &kp BSLH   
+                       &kp LGUI  &kp LSHFT &kp SPACE &kp BSPC  &kp LCTRL                                  &kp LANG1 &kp RET   &kp SPACE &kp RSHFT &kp LANG1 
             >;
         };
 
         lower_layer {
             bindings = <
-   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
-   &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
-   &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DOT   &kp BSLH  
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp LANG2 
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
+   &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &kp LALT  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
+   &kp LCTRL &kp COMMA    &none        &none        &none      &kp LT    &trans     &kp LALT      &kp KP_NUM &trans    &kp GT       &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LCTRL                           &kp LANG2 &kp KP_ENTER &kp SPACE &kp RSHFT &kp LANG2 
             >;
         };
 
         raise_layer {
                 bindings = <
-   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR  &kp KP_N7 &kp KP_N8 &kp KP_N9  &td_par      &kp KP_MINUS
-   &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC  &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &kp EQUAL
-   &kp CAPS  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT  &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_SLASH &kp KP_MULTIPLY
-   &kp LCTRL &kp LALT     &none        &none        &none      &kp LT    &trans     &kp LCTRL     &kp KP_NUM &trans    &kp GT    &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DOT   &kp BSLH   
-                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LALT                            &kp LANG2 &kp RET   &kp SPACE &kp RSHFT &kp LANG2 
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
+   &kp TAB   &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &kp LALT  &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
+   &kp LCTRL &kp COMMA    &none        &none        &none      &kp LT    &trans     &kp LALT      &kp KP_NUM &trans    &kp GT       &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+                          &kp LGUI     &kp LSHFT    &kp SPACE  &kp DEL   &kp LCTRL                           &kp LANG2 &kp KP_ENTER &kp SPACE &kp RSHFT &kp LANG2 
             >;
         };
 
