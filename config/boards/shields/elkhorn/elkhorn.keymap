@@ -41,15 +41,15 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_PLUS_EQUAL";
             #binding-cells = <0>;
-            tapping-term-ms = <120>;
+            tapping-term-ms = <220>;
             bindings = <&kp KP_PLUS>, <&kp EQUAL>;
         };
         td_mnc: tap_dance_minus_clear {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_MINUS_CLEAR";
             #binding-cells = <0>;
-            tapping-term-ms = <120>;
-            bindings = <&kp KP_MINUS>, <&kp KP_CLEAR>;
+            tapping-term-ms = <220>;
+            bindings = <&kp KP_MINUS>, <&kp ESC>;
         };
     };
     
