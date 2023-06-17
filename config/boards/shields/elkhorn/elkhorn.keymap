@@ -14,7 +14,9 @@
 #define LOWER 1
 #define RAISE 2
 #define THEN 3
-#define LOCK  4
+#define LOCK 4
+#define COL 5
+#define SEV 6
 
 
 #define SH LSHFT 
@@ -90,6 +92,7 @@
         //gLSp||합
         combo_gLSp {
             timeout-ms = <8000>;
+            layers = <6>
             key-positions = <29 32 54>;
             bindings = <&alt_51157>;
         };
@@ -132,7 +135,8 @@
     
     keymap {
         compatible = "zmk,keymap";
-        qwerty_layer {
+
+        qwerty_layer { //0
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
@@ -142,7 +146,7 @@
             >;
         };
 
-        lower_layer {
+        lower_layer { //1
             bindings = <
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
    &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
@@ -152,7 +156,7 @@
             >;
         };
 
-        raise_layer {
+        raise_layer { //2
                 bindings = <
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
    &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
@@ -163,7 +167,7 @@
         };
 
         
-        then_layer {
+        then_layer { //3
             bindings = <
    &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
    &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
@@ -173,7 +177,7 @@
             >;
         };
 
-        lock_layer {
+        lock_layer { //4
             bindings = <
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
    &none      &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
@@ -182,5 +186,27 @@
                            &none        &none        &none        &none     &none                                      &none     &none      &none      &none      &none  
             >;
         };
+        
+        colemak_layer { //5
+            bindings = <
+   &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+   &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
+   &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp LANG1 
+            >;
+        };
+        
+        seval_layer { //6
+            bindings = <
+   &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+   &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
+   &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp LANG1 
+            >;
+        };
+
+
     };
 };
