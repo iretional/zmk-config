@@ -22,6 +22,16 @@
 #define KP_DIV KP_DIVIDE
 #define LSP SPACE
 #define RSP SPACE
+#define P0 KP_N0
+#define P1 KP_N1
+#define P2 KP_N2
+#define P3 KP_N3
+#define P4 KP_N4
+#define P5 KP_N5
+#define P6 KP_N6
+#define P7 KP_N7
+#define P8 KP_N8
+#define P9 KP_N9
 
 #define VOL_DN C_VOL_DN
 #define VOL_UP C_VOL_UP
@@ -105,7 +115,7 @@
             #binding-cells = <0>;
             bindings
                 = <&macro_press &kp LALT>
-                , <&macro_tap &kp 5>, <&macro_tap &kp 1>, <&macro_tap &kp 1>, <&macro_tap &kp 5>, <&macro_tap &kp 7>
+                , <&macro_tap &kp P5 &kp P1 &kp P1 &kp P5 &kp P7>
                 , <&macro_release &kp LALT>
                 ;
         };
@@ -119,6 +129,7 @@
         };
     };
 
+    
     keymap {
         compatible = "zmk,keymap";
         qwerty_layer {
