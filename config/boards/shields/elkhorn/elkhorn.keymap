@@ -59,13 +59,6 @@
             tapping-term-ms = <200>;
             bindings = <&zed_coleLang>, <&kp LANG1>;
         };
-        td_qwty: tap_dance_qwty {
-            compatible = "zmk,behavior-tap-dance";
-            label = "tap_dance_qwty";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&zed_qwryLang>, <&kp LANG1>;
-        };
         td_par: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_PAR";
@@ -123,15 +116,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
-                = <&macro_tap &to COMK &kp LANG1>
-                ;
-        };
-        zed_qwryLang: zed_qwryLang {
-            label = "zed_qwryLang";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &to QWTY &kp LANG1>
+                = <&macro_tap &tog COMK &kp LANG1>
                 ;
         };
         //51157 || 합
@@ -216,7 +201,7 @@
    &mt SH TAB &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &kp LALT   &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
    &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &td_qwty   &kp RET    &kp RSP    &kp RSHFT  &td_qwty 
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &td_comk   &kp RET    &kp RSP    &kp RSHFT  &td_comk 
             >;
         };
         
