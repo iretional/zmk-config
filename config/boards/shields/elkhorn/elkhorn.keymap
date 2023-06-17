@@ -135,8 +135,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <LWE RSE>;
-            then-layer = <TEHN>;
+            if-layers = <3 4>;
+            then-layer = <5>;
         };
     };
 
