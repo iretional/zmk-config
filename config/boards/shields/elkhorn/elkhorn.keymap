@@ -82,7 +82,6 @@
             timeout-ms = <8000>;
             key-positions = <29 32 54>;
             bindings = <&alt_51157>;
-            slow-release = <true>;
         };
     };
 
