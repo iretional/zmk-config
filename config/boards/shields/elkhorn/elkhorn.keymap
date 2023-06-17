@@ -11,11 +11,12 @@
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
+#define QWTY 0
 #define LOWER 1
 #define RAISE 2
 #define THEN 3
 #define LOCK 4
-#define COL 5
+#define COMK 5
 #define SEV 6
 
 
@@ -51,6 +52,20 @@
 
 / {
     behaviors {
+        td_comk: tap_dance_comk  {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance_comk";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&zed_coleLang>, <&kp LANG1>;
+        };
+        td_qwty: tap_dance_qwty {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance_qwty";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&zed_qwryLang>, <&kp LANG1>;
+        };
         td_par: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_PAR";
@@ -88,14 +103,6 @@
           key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
           bindings = <&tog LOCK>;
         };
-
-        //gLSp||합
-        combo_gLSp {
-            timeout-ms = <8000>;
-            layers = <6>
-            key-positions = <29 32 54>;
-            bindings = <&alt_51157>;
-        };
     };
 
     macros {
@@ -109,6 +116,22 @@
                 , <&macro_tap &kp S>
                 , <&macro_release &kp LSHFT>
                 , <&macro_release &kp LGUI>
+                ;
+        };
+        zed_coleLang: zed_coleLang {
+            label = "zed_coleLang";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to COMK &kp LANG1>
+                ;
+        };
+        zed_qwryLang: zed_qwryLang {
+            label = "zed_qwryLang";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_tap &to QWTY &kp LANG1>
                 ;
         };
         //51157 || 합
@@ -142,7 +165,7 @@
    &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
    &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp LANG1 
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &td_comk   &kp RET    &kp RSP    &kp RSHFT  &td_comk 
             >;
         };
 
@@ -190,10 +213,10 @@
         colemak_layer { //5
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
-   &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp LANG1 
+   &mt SH TAB &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
+   &kp LALT   &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &td_qwty   &kp RET    &kp RSP    &kp RSHFT  &td_qwty 
             >;
         };
         
