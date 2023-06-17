@@ -20,6 +20,8 @@
 #define SH LSHFT 
 #define KP_MUL KP_MULTIPLY
 #define KP_DIV KP_DIVIDE
+#define LSP SPACE
+#define RSP SPACE
 
 #define VOL_DN C_VOL_DN
 #define VOL_UP C_VOL_UP
@@ -60,6 +62,11 @@
         };
     };
     
+    /*      0  1  2  3  4  5                   6  7  8  9  10 11
+            12 13 14 15 16 17                  18 19 20 21 22 23
+            24 25 26 27 28 29                  30 31 32 33 34 35
+            36 37 38 39 40 41 42 43      44 45 46 47 48 49 50 51
+                   52 53 54 55 56          57 58 59 60 61               */
     combos {
         compatible = "zmk,combos";
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
@@ -70,12 +77,12 @@
           bindings = <&tog LOCK>;
         };
 
-        //korean combo
-        combo_gli {
-            timeout-ms = <3000>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-            slow-release;
+        //gLSp||합
+        combo_gLSp {
+            timeout-ms = <8000>;
+            key-positions = <29 32 54>;
+            bindings = <&alt_51157>;
+            slow-release = <true>;
         };
     };
 
@@ -92,6 +99,17 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
+        //51157 || 합
+        alt_51157: alt_51157 {
+            label = "alt_51157";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp LALT>
+                , <&macro_tap &kp 5>, <&macro_tap &kp 1>, <&macro_tap &kp 1>, <&macro_tap &kp 5>, <&macro_tap &kp 7>
+                , <&macro_release &kp LALT>
+                ;
+        };
     };
     
     conditional_layers {
@@ -102,22 +120,15 @@
         };
     };
 
-    
-    /*      0  1  2  3  4  5                   6  7  8  9  10 11
-            12 13 14 15 16 17                  18 19 20 21 22 23
-            24 25 26 27 28 29                  30 31 32 33 34 35
-            36 37 38 39 40 41 42 43      44 45 46 47 48 49 50 51
-                   52 53 54 55 56          57 58 59 60 61               */
-
     keymap {
         compatible = "zmk,keymap";
-        default_layer {
+        qwerty_layer {
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &mt SH TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
    &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo 1     &kp LALT              &kp CAPS   &mo 2      &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp SPACE &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp SPACE  &kp RSHFT  &kp LANG1 
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp LANG1 
             >;
         };
 
