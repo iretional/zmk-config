@@ -118,9 +118,9 @@
         seval_layer { //2
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &mt CL TAB &kp N1    &kp N1    &kp N1    &kp N1    &kp N1                                                          &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
-   &kp LSHFT  &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &mt CL TAB &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
+   &kp LSHFT  &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
+   &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &td_comk   &mo RSE    &none      &none      &none      &none     &kp FSLH  &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
         };
@@ -222,13 +222,13 @@
 
         // <&macro_press &kp LALT> <&macro_release &kp LALT>
 
-        //51157 || 바
+        // 바
         ZMK_MACRO(ko_qk,
             wait-ms = <20>;
             tap-ms = <20>;
             bindings = <&macro_tap &kp Q &kp K> ;
         )
-        //51157 || 합니다
+        // 합니다
         ZMK_MACRO(ko_gkqslek,
             wait-ms = <20>;
             tap-ms = <20>;
