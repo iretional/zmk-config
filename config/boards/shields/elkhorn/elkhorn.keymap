@@ -185,14 +185,14 @@
         
         sev_qLP {
           timeout-ms = <8000>;
-          layers = <3>;
+          layers = <2>;
           key-positions = <13 54>;
           bindings = <&ko_qk>;
         };
         
         sev_gli {
           timeout-ms = <8000>;
-          layers = <3>;
+          layers = <2>;
           key-positions = <20 29 33>;
           bindings = <&ko_gkqslek>;
         };
