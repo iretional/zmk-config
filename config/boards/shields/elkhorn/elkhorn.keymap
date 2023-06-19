@@ -100,7 +100,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &mt CL TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LSHFT  &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &tog COMK  &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
         };
@@ -110,7 +110,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &mt CL TAB &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &kp LSHFT  &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &tog COMK  &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA 
             >;
         };
@@ -120,8 +120,8 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &mt CL TAB &kp N1    &kp N1    &kp N1    &kp N1    &kp N1                                                          &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LSHFT  &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &tog COMK  &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG2  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
+   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
         };
 
