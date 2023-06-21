@@ -51,6 +51,11 @@
     tapping-term-ms = <200>;
 }; 
 
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+}; 
+
 / {
     behaviors {
         td_comk: tap_dance_comk  {
