@@ -13,12 +13,8 @@ if SHIELD_ELKHORN_LEFT || SHIELD_ELKHORN_RIGHT
 config ZMK_SPLIT
     default y
 
-endif
-
-if ZMK_BACKLIGHT
-
 config ZMK_BACKLIGHT
     select LED
     select LED_GPIO
 
-endif # ZMK_BACKLIGHT
+endif
