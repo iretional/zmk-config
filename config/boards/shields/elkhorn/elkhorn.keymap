@@ -167,7 +167,7 @@
    &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
    &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
    &trans     &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
-   &trans     &trans       &none        &none        &kp CALC     &none     &none     &trans               &none       &none     &BL_TOG    &none      &none      &none     &none     &none
+   &trans     &trans       &none        &none        &kp CALC     &none     &none     &trans               &none       &none     &bl BL_TOG &none      &none      &none     &none     &none
                            &zed_capt    &trans       &trans       &none     &trans                                     &none     &none      &none      &none      &none  
             >;
         };
