@@ -63,7 +63,7 @@
             label = "tap_dance_comk";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&tog COMK>, <&zed_coleLang>;
+            bindings = <&zed_coleLang>, <&tog COMK>;
         };
         td_par: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
