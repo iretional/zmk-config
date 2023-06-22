@@ -57,6 +57,16 @@
 }; 
 
 / {
+
+    backlight: gpioleds {
+        compatible = "gpio-leds";
+        label = "Backlight LED";
+        gpio_led_0 {
+            gpios = <&gpio0 9 GPIO_ACTIVE_HIGH>;
+            label = "Backlight LED 0";
+        };
+    };
+
     behaviors {
         td_comk: tap_dance_comk  {
             compatible = "zmk,behavior-tap-dance";
@@ -194,12 +204,7 @@
           bindings = <&tog LOCK>;
         };
         
-        sev_gli {
-          timeout-ms = <8000>;
-          layers = <2>;
-          key-positions = <20 29 33>;
-          bindings = <&ko_gkqslek>;
-        };
+        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;key-positions=<20 29 33>;};
     };
 
     macros {
@@ -227,7 +232,7 @@
         // <&macro_press &kp LALT> <&macro_release &kp LALT>
 
         
-        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings = <&macro_tap &kp Q &kp K>;)
+        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
 
         /* 합니다 */
         ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>;
