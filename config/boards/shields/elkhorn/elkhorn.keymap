@@ -198,28 +198,13 @@
     };
 
     macros {
-        zed_capt: zed_capt {
-            label = "zed_capt";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp LSHFT>
-                , <&macro_press &kp LGUI>
-                , <&macro_tap &kp S>
-                , <&macro_release &kp LSHFT>
-                , <&macro_release &kp LGUI>
-                ;
-        };
-        zed_coleLang: zed_coleLang {
-            label = "zed_coleLang";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_tap &tog COMK &kp LANG1>
-                ;
-        };
+        ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
+            <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
+        
+        ZMK_MACRO(zed_coleLang, wait-ms=<10>; tap-ms=<10>; bindings= <&macro_tap &tog COMK &kp LANG1>;)
 
-        // <&macro_press &kp LALT> <&macro_release &kp LALT>
 
         
         /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
