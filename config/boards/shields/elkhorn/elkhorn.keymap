@@ -194,7 +194,7 @@
           bindings = <&tog LOCK>;
         };
         
-        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;key-positions=<20 29 33>;};
+        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
     };
 
     macros {
