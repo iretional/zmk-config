@@ -58,6 +58,13 @@
 
 / {
     behaviors {
+        td_c2q: tap_dance_c2q  {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance_c2q";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&to 1>, <&to 0>;
+        };
         td_comk: tap_dance_comk  {
             compatible = "zmk,behavior-tap-dance";
             label = "tap_dance_comk";
@@ -103,10 +110,10 @@
         qwerty_layer { //0
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &mt CL TAB &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
-   &kp LSHFT  &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp LALT  &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &sk RSHFT  &kp COMMA
+   &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
+   &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &sk LSHFT &kp LSP   &kp BSPC  &mt CL TAB                                 &kp LANG1  &kp RET    &kp RSP    &sk RSHFT  &td_c2q
             >;
         };
 
@@ -116,15 +123,15 @@
    &trans     &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &trans     &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
    &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &td_comk   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &trans    &trans    &trans    &trans    &trans                                     &kp LANG1  &trans     &trans     &trans     &kp COMMA 
+                        &trans    &trans    &trans    &trans    &trans                                     &kp LANG1  &trans     &trans     &trans     &trans 
             >;
         };
         
         seval_layer { //2
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &mt CL TAB &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
-   &kp LSHFT  &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
+   &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
+   &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
    &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &td_comk   &mo RSE    &none      &none      &none      &none     &kp FSLH  &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
