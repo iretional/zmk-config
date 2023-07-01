@@ -113,7 +113,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp N0    &kp BSLH   
                         &kp LGUI  &sk LSHFT &kp LSP   &kp BSPC  &mt CL TAB                                 &kp LANG1  &kp RET    &kp RSP    &sk RSHFT  &td_c2q
             >;
         };
@@ -123,7 +123,7 @@
    &trans     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &trans     &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &trans     &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &td_comk   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &td_comk   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &trans    &kp BSLH   
                         &trans    &trans    &trans    &trans    &trans                                     &kp LANG1  &trans     &trans     &trans     &trans 
             >;
         };
@@ -133,7 +133,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
-   &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &td_comk   &mo RSE    &none      &none      &none      &none     &kp FSLH  &kp BSLH   
+   &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &td_comk   &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
         };
