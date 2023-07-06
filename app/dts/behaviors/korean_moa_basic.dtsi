@@ -21,23 +21,29 @@
     combos {
         compatible = "zmk,combos";
         
-        sev_qkd {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qkd>;slow-release;key-positions=<12 32 53>;};
-        sev_qk {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qk>;slow-release;key-positions=<12 53>;};
-        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
-        sev_dgLSRSHiu {timeout-ms=<4000>;layers=<2>;bindings=<&ko_goTtmqslek>;slow-release;key-positions=<17 29 54 60 20 33>;};
+        /omit-if-no-ref/ sev_qkd {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qkd>;slow-release;key-positions=<12 32 53>;};
+        /omit-if-no-ref/ sev_qk {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qk>;slow-release;key-positions=<12 53>;};
+        /omit-if-no-ref/ sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
+        /omit-if-no-ref/ sev_dgLSRSHiu {timeout-ms=<4000>;layers=<2>;bindings=<&ko_goTtmqslek>;slow-release;key-positions=<17 29 54 60 20 33>;};
     };
 
     macros {
-        
-        /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K &kp K D>;)
-        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
-
-        /* 합니다 */
-        ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>;
-            bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-
-        ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>;
-            bindings = <&macro_tap &kp G &kp O &kp LS(T) &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+        /omit-if-no-ref/ ko_qkd: ko_qkd { /* 방 */ 
+            label = "ko_qkd"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms=<20>; tap-ms=<20>;
+            bindings=<&macro_tap &kp Q &kp K &kp K D>;
+        };
+        /omit-if-no-ref/ ko_qk: ko_qk { /* 바 */ 
+            label = "ko_qk"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms=<20>; tap-ms=<20>;
+            bindings=<&macro_tap &kp Q &kp>;
+        };
+        /omit-if-no-ref/ ko_gkqslek: ko_gkqslek { /* 합니다. */
+            label = "ko_gkqslek"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms=<20>; tap-ms=<20>;
+            bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;
+        };
+        /omit-if-no-ref/ ko_goTtmqslek: ko_goTtmqslek { /* 했습니다. */
+            label = "ko_goTtmqslek"; compatible = "zmk,behavior-macro"; #binding-cells = <0>; wait-ms=<20>; tap-ms=<20>;
+            bindings = <&macro_tap &kp G &kp O &kp LS(T) &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;
+        };
 
 
     };
