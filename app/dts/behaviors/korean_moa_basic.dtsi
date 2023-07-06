@@ -1,0 +1,44 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    /*      0  1  2  3  4  5                   6  7  8  9  10 11
+            12 13 14 15 16 17                  18 19 20 21 22 23
+            24 25 26 27 28 29                  30 31 32 33 34 35
+            36 37 38 39 40 41 42 43      44 45 46 47 48 49 50 51
+                   52 53 54 55 56          57 58 59 60 61               */
+                   
+    /*      0  1    2    3    4    5                     6   7    8    9   10   11-
+            12 ㅂ13 ㅈ14 ㄷ15 ㄱ16 ㅅ17                  18ㅛ 19ㅕ 20ㅑ 21ㅐ 22ㅔ 23=
+            24 ㅁ25 ㄴ26 ㅇ27 ㄹ28 ㅎ29                  30ㅗ 31ㅓ 32ㅏ 33ㅣ 34;  35'
+            36 37   ㅋ38 ㅌ39 ㅊ40 ㅍ41 42 43      44 45 46ㅠ 47ㅜ 48ㅡ 49.  50/ 51\
+                      52 53SH 54LS 55BS 56         57 ET58 RS59 SH60 61,               */
+    combos {
+        compatible = "zmk,combos";
+        
+        sev_qkd {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qkd>;slow-release;key-positions=<12 32 53>;};
+        sev_qk {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qk>;slow-release;key-positions=<12 53>;};
+        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
+        sev_dgLSRSHiu {timeout-ms=<4000>;layers=<2>;bindings=<&ko_goTtmqslek>;slow-release;key-positions=<17 29 54 60 20 33>;};
+    };
+
+    macros {
+        
+        /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K &kp K D>;)
+        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
+
+        /* 합니다 */
+        ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>;
+            bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
+
+        ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>;
+            bindings = <&macro_tap &kp G &kp O &kp LS(T) &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+
+
+    };
+};

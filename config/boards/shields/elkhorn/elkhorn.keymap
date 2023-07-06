@@ -113,7 +113,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &td_comk   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &tog SEV   &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
                         &kp LGUI  &sk LSHFT &kp LSP   &kp BSPC  &mt CL TAB                                 &kp LANG1  &kp RET    &kp RSP    &sk RSHFT  &td_c2q
             >;
         };
@@ -123,7 +123,7 @@
    &trans     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &trans     &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &trans     &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &td_comk   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &trans    &kp BSLH   
+   &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &tog SEV   &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &trans    &kp BSLH   
                         &trans    &trans    &trans    &trans    &trans                                     &kp LANG1  &trans     &trans     &trans     &trans 
             >;
         };
@@ -133,7 +133,7 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
-   &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &td_comk   &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
+   &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &tog SEV   &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
                         &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
             >;
         };
@@ -181,17 +181,6 @@
     };
 
     
-    /*      0  1  2  3  4  5                   6  7  8  9  10 11
-            12 13 14 15 16 17                  18 19 20 21 22 23
-            24 25 26 27 28 29                  30 31 32 33 34 35
-            36 37 38 39 40 41 42 43      44 45 46 47 48 49 50 51
-                   52 53 54 55 56          57 58 59 60 61               */
-                   
-    /*      0  1    2    3    4    5                     6   7    8    9   10   11-
-            12 ㅂ13 ㅈ14 ㄷ15 ㄱ16 ㅅ17                  18ㅛ 19ㅕ 20ㅑ 21ㅐ 22ㅔ 23=
-            24 ㅁ25 ㄴ26 ㅇ27 ㄹ28 ㅎ29                  30ㅗ 31ㅓ 32ㅏ 33ㅣ 34;  35'
-            36 37   ㅋ38 ㅌ39 ㅊ40 ㅍ41 42 43      44 45 46ㅠ 47ㅜ 48ㅡ 49.  50/ 51\
-                      52 53SH 54LS 55BS 56         57 ET58 RS59 SH60 61,               */
     combos {
         compatible = "zmk,combos";
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
@@ -201,10 +190,8 @@
           key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
           bindings = <&tog LOCK>;
         };
-        
-        sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
     };
-
+    
     macros {
         ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
             <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
@@ -213,15 +200,5 @@
         
         ZMK_MACRO(zed_coleLang, wait-ms=<10>; tap-ms=<10>; bindings= <&macro_tap &tog COMK &kp LANG1>;)
 
-
-        
-        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
-
-        /* 합니다 */
-        ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>;
-            bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-
-
     };
-    
 };
