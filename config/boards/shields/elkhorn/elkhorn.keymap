@@ -180,27 +180,7 @@
         }; 
     };
 
-    
-    combos {
-        compatible = "zmk,combos";
-        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
-        // this combo can be replaced by a native behavior in the future.
-        combo_lock {
-          timeout-ms = <3000>;
-          key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
-          bindings = <&tog LOCK>;
-        };
-    };
-    
-    macros {
-        ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
-            <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
-            , <&macro_tap &kp S>
-            , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
-        
-        ZMK_MACRO(zed_coleLang, wait-ms=<10>; tap-ms=<10>; bindings= <&macro_tap &tog COMK &kp LANG1>;)
 
-    };
 
         /*      0  1  2  3  4  5                   6  7  8  9  10 11
             12 13 14 15 16 17                  18 19 20 21 22 23
@@ -215,14 +195,31 @@
                       52 53SH 54LS 55BS 56         57 ET58 RS59 SH60 61,               */
     combos {
         compatible = "zmk,combos";
+        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
+        // this combo can be replaced by a native behavior in the future.
+        combo_lock {
+          timeout-ms = <3000>;
+          key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
+          bindings = <&tog LOCK>;
+        };
+
         
         /* 방 */ sev_qkd {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qkd>;slow-release;key-positions=<12 32 53>;};
         /* 바 */ sev_qk {timeout-ms=<4000>;layers=<2>;bindings=<&ko_qk>;slow-release;key-positions=<12 53>;};
         /* 합니다. */ sev_gli {timeout-ms=<4000>;layers=<2>;bindings=<&ko_gkqslek>;slow-release;key-positions=<20 29 33>;};
         /* 했습니다. */ sev_dgLSRSHiu {timeout-ms=<4000>;layers=<2>;bindings=<&ko_goTtmqslek>;slow-release;key-positions=<17 29 54 60 20 33>;};
     };
-
+    
     macros {
+        ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
+            <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
+        
+        ZMK_MACRO(zed_coleLang, wait-ms=<10>; tap-ms=<10>; bindings= <&macro_tap &tog COMK &kp LANG1>;)
+
+
+
         /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K &kp K D>;)
         /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
         /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
