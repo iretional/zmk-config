@@ -224,9 +224,9 @@
 
 
 
-        /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K &kp D>;)
-        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K>;)
-        /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-        /* 했습니다. */ ZMK_MACRO(ko_go_ttmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp O &kp T &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+        /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<10>; tap-ms=<10>; bindings=<&kp Q &kp K &kp D>;)
+        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<10>; tap-ms=<10>; bindings=<&kp Q &kp K>;)
+        /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<10>; tap-ms=<10>; bindings = <&kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
+        /* 했습니다. */ ZMK_MACRO(ko_go_ttmqslek, wait-ms=<10>; tap-ms=<10>; bindings = <&kp G &kp O &kp T &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
     };
 };
