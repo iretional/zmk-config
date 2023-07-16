@@ -210,10 +210,10 @@
         /* Delete. */ combo_sev_delete {timeout-ms=<4000>; layers=<2>;bindings=<&kp DELETE>; slow-release; key-positions=<30 31>;};
         /* Enter. */ combo_sev_enter {timeout-ms=<4000>; layers=<2>;bindings=<&kp ENTER>; slow-release; key-positions=<31 32 33>;};
 
-        /* 방 */ combo_sev_qkd {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qkd>; slow-release; key-positions=<13 32 54>;};
+        /* 방 */ combo_sev_qk_lsp {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qkd>; slow-release; key-positions=<13 32 54>;};
         /* 바 */ combo_sev_qk {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qk>; slow-release; key-positions=<13 54>;};
         /* 합니다. */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33>;};
-        /* 했습니다. */ combo_sev_dgLSRSHiu {timeout-ms=<4000>; layers=<2>;bindings=<&ko_goTtmqslek>; slow-release; key-positions=<17 20 29 33 54 60>;};
+        /* 했습니다. */ combo_sev_gtli_lsp_rsh {timeout-ms=<4000>; layers=<2>;bindings=<&ko_go_ttmqslek>; slow-release; key-positions=<17 20 29 33 54 60>;};
     };
     
     macros {
@@ -227,6 +227,6 @@
         /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K &kp D>;)
         /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K>;)
         /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-        /* 했습니다. */ ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp O &kp T &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+        /* 했습니다. */ ZMK_MACRO(ko_go_ttmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp O &kp T &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
     };
 };
