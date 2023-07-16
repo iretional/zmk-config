@@ -134,7 +134,7 @@
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
    &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &kp LALT              &tog SEV   &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
-                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &kp COMMA
+                        &kp LGUI  &kp LSHFT &kp LSP   &kp BSPC  &kp LCTRL                                  &kp LANG1  &kp RET    &kp RSP    &kp RSHFT  &trans
             >;
         };
 
@@ -204,6 +204,12 @@
         };
 
         
+        /* Spacebar. */ combo_sev_spacebar {timeout-ms=<4000>; layers=<2>;bindings=<&kp SPACE>; slow-release; key-positions=<32 33>;};
+        /* Backspace. */ combo_sev_backspace {timeout-ms=<4000>; layers=<2>;bindings=<&kp BACKSPACE>; slow-release; key-positions=<31 32>;};
+        /* Word Backspace. */ combo_sev_wordBackspace {timeout-ms=<4000>; layers=<2>;bindings=<&kp LC(BACKSPACE)>; slow-release; key-positions=<30 31 32>;};
+        /* Delete. */ combo_sev_delete {timeout-ms=<4000>; layers=<2>;bindings=<&kp DELETE>; slow-release; key-positions=<30 31>;};
+        /* Enter. */ combo_sev_enter {timeout-ms=<4000>; layers=<2>;bindings=<&kp ENTER>; slow-release; key-positions=<31 32 33>;};
+
         /* 방 */ combo_sev_qkd {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qkd>; slow-release; key-positions=<13 32 54>;};
         /* 바 */ combo_sev_qk {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qk>; slow-release; key-positions=<13 54>;};
         /* 합니다. */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33>;};
@@ -221,6 +227,6 @@
         /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K &kp D>;)
         /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&kp Q &kp K>;)
         /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-        /* 했습니다. */ ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp O &kp LS(T) &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+        /* 했습니다. */ ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&kp G &kp O &kp T &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
     };
 };
