@@ -213,9 +213,7 @@
 
 
 
-        /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K &kp K D>;)
-        /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K>;)
-        /* 합니다. */ ZMK_MACRO(ko_gkqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&macro_tap &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp DOT>;)
-        /* 했습니다. */ ZMK_MACRO(ko_goTtmqslek, wait-ms=<20>; tap-ms=<20>; bindings = <&macro_tap &kp G &kp O &kp LS(T) &kp T &kp M &kp Q &kp S  &kp L &kp E &kp K &kp DOT>;)
+        /* 방 */
+        ZMK_MACRO(ko_qkd, wait-ms=<20>; tap-ms=<20>; bindings=<&macro_tap &kp Q &kp K &kp K D>;)
     };
 };
