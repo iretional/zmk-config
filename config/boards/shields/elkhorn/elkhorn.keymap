@@ -213,8 +213,8 @@
         /* 방 */ combo_sev_qk_lsp {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qkd>; slow-release; key-positions=<13 32 54>;};
         /* 바 */ combo_sev_qk {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qk>; slow-release; key-positions=<13 54>;};
         /* 합니다. */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33>;};
-        /* 합니다. 2 */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33 54>;};
-        /* 합니다. 3 */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 22 29 33 54>;};
+        /* 합니다. 2 */ combo_sev_gli2 {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33 54>;};
+        /* 합니다. 3 */ combo_sev_gli3 {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 22 29 33 54>;};
         /* 했습니다. */ combo_sev_gtli_lsp_rsh {timeout-ms=<4000>; layers=<2>;bindings=<&ko_go_ttmqslek>; slow-release; key-positions=<17 20 29 33 54 60>;};
     };
     
