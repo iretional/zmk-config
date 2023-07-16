@@ -203,11 +203,6 @@
           bindings = <&tog LOCK>;
         };
 
-        
-        /* 방 */ combo_sev_qkd {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qkd>; slow-release; key-positions=<12 32 53>;};
-        /* 바 */ combo_sev_qk {timeout-ms=<4000>; layers=<2>;bindings=<&ko_qk>; slow-release; key-positions=<12 53>;};
-        /* 합니다. */ combo_sev_gli {timeout-ms=<4000>; layers=<2>;bindings=<&ko_gkqslek>; slow-release; key-positions=<20 29 33>;};
-        /* 했습니다. */ combo_sev_dgLSRSHiu {timeout-ms=<4000>; layers=<2>;bindings=<&ko_goTtmqslek>; slow-release; key-positions=<17 29 54 60 20 33>;};
     };
     
     macros {
