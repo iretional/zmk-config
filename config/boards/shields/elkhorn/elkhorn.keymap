@@ -203,4 +203,14 @@
           bindings = <&tog LOCK>;
         };
     };
+    
+    macros {
+        ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
+            <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
+            , <&macro_tap &kp S>
+            , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
+
+
+
+    };
 };
