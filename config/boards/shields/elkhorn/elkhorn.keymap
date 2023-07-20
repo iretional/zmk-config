@@ -25,6 +25,7 @@
 #define KP_DIV KP_DIVIDE
 #define LSP SPACE
 #define RSP SPACE
+#define SPC SPACE
 #define CL CAPS
 #define P0 KP_N0
 #define P1 KP_N1
@@ -52,7 +53,7 @@
 }; 
 
 &sk {
-    release-after-ms = <270>;
+    release-after-ms = <100>;
     quick-release;
 }; 
 
@@ -86,10 +87,18 @@
             tapping-term-ms = <220>;
             bindings = <&kp KP_MINUS>, <&kp ESC>;
         };
+        
+        td_btAllClr: tap_dance_btAllClr  {
+            compatible = "zmk,behavior-tap-dance";
+            label = "tap_dance_btAllClr";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&bt BT_CLR>, <&zed_btAllClr>;
+        };
 
         ht_600: behavior_ht_600{
             compatible = "zmk,behavior-hold-tap";
-            label = "ht_500";
+            label = "ht_600";
             #binding-cells = <2>;
             flavor = "hold-preferred";
             tapping-term-ms = <600>;
@@ -115,8 +124,8 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT              &none    &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp LSP   &kp BSPC  &ht_600 CAPS TAB                      &kp LANG1  &kp RET    &kp RSP    &sk RSHFT  &td_c2q
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT                &none    &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &sk LSHFT &kp SPC   &kp BSPC  &ht_600 CAPS TAB                      &kp LANG1  &td_c2q    &kp RET    &sk RSHFT  &ht_600 LANG2 LANG1
             >;
         };
 
@@ -126,7 +135,7 @@
    &trans     &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &trans     &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
    &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &trans     &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &trans    &kp BSLH   
-                        &trans    &trans    &trans    &trans    &trans                                     &kp LANG1  &trans     &trans     &trans     &trans 
+                        &trans    &trans    &trans    &trans    &trans                               &trans     &trans     &trans     &trans     &trans 
             >;
         };
         
@@ -136,38 +145,38 @@
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
    &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &trans                &trans     &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
-                        &none     &none     &none     &none     &trans                                     &trans     &none      &none      &none      &trans
+                            &none     &none     &none     &none     &trans                             &trans     &none      &none      &none      &trans
             >;
         };
 
         lower_layer { //3
             bindings = <
-   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
-   &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
-   &trans    &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
-   &trans    &trans       &none        &none        &none      &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
-                          &trans       &trans       &trans     &kp DEL   &trans                              &kp LANG2 &kp KP_ENTER &trans    &trans    &trans 
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS &td_mnc
+   &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &trans    &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL   &kp CARET
+   &trans    &trans       &none        &none        &none      &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+                              &trans       &trans       &trans     &kp DEL   &trans                      &kp LANG2 &trans       &kp KP_ENTER &trans     &zed_coleLang 
             >;
         };
 
         raise_layer { //4
                 bindings = <
-   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7 &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
-   &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4 &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
-   &trans    &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1 &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
-   &trans    &trans       &none        &none        &none      &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
-                          &trans       &trans       &trans     &kp DEL   &trans                              &kp LANG2 &kp KP_ENTER &trans    &trans    &trans    
+   &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
+   &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &trans    &none        &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
+   &trans    &trans       &none        &none        &none      &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+                              &trans       &trans       &trans     &kp DEL   &trans                      &kp LANG2 &trans       &kp KP_ENTER &trans     &zed_coleLang   
             >;
         };
 
         
         then_layer { //5
             bindings = <
-   &kp ESC    &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
-   &bt BT_CLR &bt BT0      &bt BT1      &bt BT2      &bt BT3      &bt BT4                                                        &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
-   &trans     &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
-   &trans     &trans       &none        &none        &kp CALC     &none     &none     &trans               &none       &none     &none      &none      &none      &none     &none     &none
-                           &zed_capt    &trans       &trans       &none     &trans                                     &none     &none      &none      &none      &none  
+   &kp ESC      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
+   &td_btAllClr &bt BT0      &bt BT1      &bt BT2      &bt BT3      &none                                                          &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
+   &trans       &none        &none        &none        &none        &none                                                          &none      &none      &none      &none     &none     &none 
+   &trans       &trans       &none        &none        &kp CALC     &none     &none     &trans               &none       &none     &none      &none      &none      &none     &none     &none
+                               &zed_capt    &trans       &trans       &none     &trans                                 &none     &none      &none      &none      &none  
             >;
         };
 
@@ -183,18 +192,6 @@
     };
 
 
-
-        /*  0  1  2  3  4  5                   6  7  8  9  10 11
-            12 13 14 15 16 17                  18 19 20 21 22 23
-            24 25 26 27 28 29                  30 31 32 33 34 35
-            36 37 38 39 40 41 42 43      44 45 46 47 48 49 50 51
-                   52 53 54 55 56          57 58 59 60 61               */
-                   
-    /*      0  1    2    3    4    5                     6   7    8    9   10   11-
-            12 ㅂ13 ㅈ14 ㄷ15 ㄱ16 ㅅ17                  18ㅛ 19ㅕ 20ㅑ 21ㅐ 22ㅔ 23=
-            24 ㅁ25 ㄴ26 ㅇ27 ㄹ28 ㅎ29                  30ㅗ 31ㅓ 32ㅏ 33ㅣ 34;  35'
-            36 37   ㅋ38 ㅌ39 ㅊ40 ㅍ41 42 43      44 45 46ㅠ 47ㅜ 48ㅡ 49.  50/ 51\
-                      52 53SH 54LS 55BS 56         57 ET58 RS59 SH60 61,               */
     combos {
         compatible = "zmk,combos";
         // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
@@ -219,7 +216,8 @@
             , <&macro_tap &kp S>
             , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
 
-
+        ZMK_MACRO(zed_coleLang, wait-ms=<5>; tap-ms=<5>; bindings=<&tog 1 &kp LANG1>;)
+        ZMK_MACRO(zed_btAllClr, wait-ms=<1>; tap-ms=<1>; bindings=<&bt BT0  &bt BT_CLR &bt BT1  &bt BT_CLR &bt BT2  &bt BT_CLR &bt BT3  &bt BT_CLR>;)
 
         /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<10>; tap-ms=<10>; bindings=<&kp Q &kp K &kp D>;)
         /* 바 */ ZMK_MACRO(ko_qk, wait-ms=<10>; tap-ms=<10>; bindings=<&kp Q &kp K>;)
