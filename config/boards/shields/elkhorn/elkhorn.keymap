@@ -100,7 +100,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "ht_600";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
+            flavor = "tap-preferred";
             tapping-term-ms = <600>;
             bindings = <&kp>, <&kp>;
         };
