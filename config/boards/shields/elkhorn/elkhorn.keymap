@@ -130,11 +130,11 @@
 
         plover_layer { //1
             bindings = <
-   &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans     &trans     &trans     &trans    &trans    &trans    
-   &trans     &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp LBKT
-   &trans     &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans    &trans    &trans    &trans    &trans       &trans    
+   &trans     &kp Q/*S*/&kp W/*T*/&kp E/*P*/&kp R/*H*/&kp T/***/                                                      &kp Y/***/&kp U/*F*/&kp I/*P*/&kp O/*L*/&kp P/*T*/   &kp LBKT/*D*/
+   &trans     &kp A/*S*/&kp S/*S*/&kp D/*W*/&kp F/*R*/&kp G/***/                                                      &kp H/***/&kp J/*R*/&kp K/*B*/&kp L/*G*/&kp SEMI/*S*/&kp SQT/*Z*/
    &trans     &trans    &none     &none     &none     &none     &mo LWE   &trans                &trans     &mo RSE    &none      &none      &none      &kp DOT   &trans    &trans   
-                        &trans    &kp C     &kp V     &trans    &trans                               &trans     &trans     &kp N     &kp M     &trans   
+                        &trans    &kp C/*A*/&kp V/*O*/&none     &trans                               &trans     &trans     &kp N/*E*/&kp M/*U*/&trans   
             >;
         };
         
@@ -142,7 +142,7 @@
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp EQUAL
-   &none      &none     &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
+   &none      &trans    &none     &none     &none     &none                                                           &none      &none      &none      &none     &none     &kp SQT
    &kp LCTRL  &kp LALT  &none     &none     &none     &none     &mo LWE   &trans                &trans     &mo RSE    &none      &none      &none      &none     &trans    &kp BSLH   
                             &none     &none     &none     &none     &trans                             &trans     &none      &none      &none      &trans
             >;
@@ -200,12 +200,6 @@
           key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
           bindings = <&tog LOCK>;
         };
-
-        /* Spacebar. */ combo_sev_spacebar {timeout-ms=<4000>; layers=<2>;bindings=<&kp SPACE>; slow-release; key-positions=<32 33>;};
-        /* Backspace. */ combo_sev_backspace {timeout-ms=<4000>; layers=<2>;bindings=<&kp BACKSPACE>; slow-release; key-positions=<31 32>;};
-        /* Word Backspace. */ combo_sev_wordBackspace {timeout-ms=<4000>; layers=<2>;bindings=<&kp LC(BACKSPACE)>; slow-release; key-positions=<30 31 32>;};
-        /* Delete. */ combo_sev_delete {timeout-ms=<4000>; layers=<2>;bindings=<&kp DELETE>; slow-release; key-positions=<30 31>;};
-        /* Enter. */ combo_sev_enter {timeout-ms=<4000>; layers=<2>;bindings=<&kp ENTER>; slow-release; key-positions=<31 32 33>;};
         
     };
     
@@ -216,15 +210,15 @@
             , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
 
         ZMK_MACRO(zed_btAllClr, wait-ms=<1>; tap-ms=<1>; bindings=<&bt BT0  &bt BT_CLR &bt BT1  &bt BT_CLR &bt BT2  &bt BT_CLR &bt BT3  &bt BT_CLR>;)
-        ZMK_MACRO(plv_enable, wait-ms=<10>; tap-ms=<2>; 
+        ZMK_MACRO(plv_enable, wait-ms=<5>; tap-ms=<5>;
             bindings=
                 <&macro_tap &to 1>
                 , <&macro_press &kp E &kp R &kp F &kp V &kp T &kp I &kp K>
+                , <&macro_release  &kp E &kp R &kp F &kp V &kp T &kp I &kp K>
             ;)
-        ZMK_MACRO(plv_disable, wait-ms=<10>; tap-ms=<3>; 
+        ZMK_MACRO(plv_disable, wait-ms=<5>; tap-ms=<5>;
             bindings=
                 <&macro_press &kp E &kp R &kp F &kp V &kp T &kp U>
-                , <&macro_wait_time 3>
                 , <&macro_release  &kp E &kp R &kp F &kp V &kp T &kp U>
                 , <&macro_tap &to 0>
             ;)
