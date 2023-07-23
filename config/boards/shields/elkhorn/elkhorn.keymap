@@ -12,7 +12,7 @@
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
 #define QWTY 0
-#define COMK 1
+#define PLV 1
 #define SEV 2
 #define LWE 3
 #define RSE 4
@@ -125,16 +125,16 @@
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
    &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT                &none    &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp SPC   &kp BSPC  &ht_600 CAPS TAB                      &kp LANG1  &td_c2q    &kp RET    &sk RSHFT  &ht_600 LANG2 LANG1
+                        &kp LGUI  &sk LSHFT &kp SPC   &kp BSPC  &ht_600 CAPS TAB                      &td_c2q   &td_c2q    &kp RET    &sk RSHFT  &ht_600 LANG2 LANG1
             >;
         };
 
-        colemak_layer { //1
+        plover_layer { //1
             bindings = <
-   &trans     &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &trans     &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
-   &trans     &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &trans     &trans    &kp Z     &kp X     &kp C     &kp V     &mo LWE   &trans                &trans     &mo RSE    &kp B      &kp K      &kp M      &kp DOT   &trans    &kp BSLH   
+   &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans     &trans     &trans     &trans    &trans    &trans    
+   &trans     &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp LBKT
+   &trans     &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &trans     &trans    &none     &none     &none     &none     &mo LWE   &trans                &trans     &mo RSE    &none      &none      &none      &kp DOT   &trans    &trans   
                         &trans    &trans    &trans    &trans    &trans                               &trans     &trans     &trans     &trans     &trans 
             >;
         };
@@ -216,7 +216,6 @@
             , <&macro_tap &kp S>
             , <&macro_release &kp LSHFT>, <&macro_release &kp LGUI>;)
 
-        ZMK_MACRO(zed_coleLang, wait-ms=<5>; tap-ms=<5>; bindings=<&tog 1 &kp LANG1>;)
         ZMK_MACRO(zed_btAllClr, wait-ms=<1>; tap-ms=<1>; bindings=<&bt BT0  &bt BT_CLR &bt BT1  &bt BT_CLR &bt BT2  &bt BT_CLR &bt BT3  &bt BT_CLR>;)
 
         /* 방 */ ZMK_MACRO(ko_qkd, wait-ms=<10>; tap-ms=<10>; bindings=<&kp Q &kp K &kp D>;)
