@@ -95,9 +95,9 @@
             bindings = <&bt BT_CLR>, <&zed_btAllClr>;
         };
 
-        ht_600: behavior_ht_600{
+        ht_6: behavior_ht_6{
             compatible = "zmk,behavior-hold-tap";
-            label = "ht_600";
+            label = "ht_6";
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <600>;
@@ -123,8 +123,8 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT                &none    &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &ht_600 CAPS TAB                      &td_plv   &td_plv    &kp RET    &sk RSHFT  &ht_600 RCTRL RALT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &mo LWE   &kp LALT       &ht_6 CAPS TAB    &mo RSE    &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp LCTRL                     &td_plv   &kp RET   &kp SPACE   &sk RSHFT  &ht_6 RCTRL RALT
             >;
         };
 
@@ -133,8 +133,8 @@
    &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans    &trans    &trans    &trans    &trans       &trans    
    &trans     &kp Q/*S*/&kp W/*T*/&kp E/*P*/&kp R/*H*/&kp T/***/                                                      &kp Y/***/&kp U/*F*/&kp I/*P*/&kp O/*L*/&kp P/*T*/   &kp LBKT/*D*/
    &trans     &kp A/*S*/&kp S/*S*/&kp D/*W*/&kp F/*R*/&kp G/***/                                                      &kp H/***/&kp J/*R*/&kp K/*B*/&kp L/*G*/&kp SEMI/*S*/&kp SQT/*Z*/
-   &trans     &trans    &none     &none     &none     &none     &mo LWE   &trans                &trans     &mo RSE    &none      &none      &none      &kp DOT   &trans    &trans   
-                        &trans    &kp C/*A*/&kp V/*O*/&none     &trans                               &trans     &trans     &kp N/*E*/&kp M/*U*/&trans   
+   &trans     &trans    &trans    &trans    &trans    &trans    &mo LWE   &trans                &trans     &mo RSE    &trans    &trans     &trans   &kp DOT   &trans    &trans   
+                        &trans    &kp C/*A*/&kp V/*O*/&trans    &trans                               &trans     &trans     &kp N/*E*/&kp M/*U*/&trans   
             >;
         };
         
