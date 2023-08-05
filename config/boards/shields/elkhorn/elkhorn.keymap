@@ -133,7 +133,7 @@
    &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans    &trans    &trans    &trans    &trans       &trans    
    &trans     &kp Q/*S*/&kp W/*T*/&kp E/*P*/&kp R/*H*/&kp T/***/                                                      &kp Y/***/&kp U/*F*/&kp I/*P*/&kp O/*L*/&kp P/*T*/   &kp LBKT/*D*/
    &trans     &kp A/*S*/&kp S/*S*/&kp D/*W*/&kp F/*R*/&kp G/***/                                                      &kp H/***/&kp J/*R*/&kp K/*B*/&kp L/*G*/&kp SEMI/*S*/&kp SQT/*Z*/
-   &trans     &trans    &trans    &trans    &trans    &trans    &mo LWE   &trans                &trans     &mo RSE    &trans    &trans     &trans   &kp DOT   &trans    &trans   
+   &trans     &trans    &trans    &trans    &kp SPACE &kp SPACE &mo LWE   &trans                &trans     &mo RSE    &kp SPACE &kp SPACE &trans   &kp DOT   &trans    &trans   
                         &trans    &kp C/*A*/&kp V/*O*/&trans    &trans                               &trans     &trans     &kp N/*E*/&kp M/*U*/&trans   
             >;
         };
