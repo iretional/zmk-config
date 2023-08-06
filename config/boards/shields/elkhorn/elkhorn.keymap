@@ -180,18 +180,15 @@
 
     };
 
-
+/*
     combos {
         compatible = "zmk,combos";
-        // If https://github.com/zmkfirmware/zmk/issues/405 is implemented,
-        // this combo can be replaced by a native behavior in the future.
         combo_lock {
           timeout-ms = <3000>;
-          key-positions = <0 /* ESC */ 42 /* LOWER */ 45 /* RAISE */>;
-          bindings = <&tog LOCK>;
+          key-positions = <0  ESC  42  45>;
+          bindings = <&none>;
         };
-        
-    };
+    };*/
     
     macros {
         lm: lm {
