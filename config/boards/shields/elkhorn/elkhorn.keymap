@@ -146,10 +146,10 @@
         
         mid_layer { //2
             bindings = <
-   &kp ESC   &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS &td_mnc
-   &trans    &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &td_pnq
-   &trans    &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL   &kp LBKT                                                &kp RBKT     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL   &kp CARET
-   &trans    &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV   &kp LT    &trans     &trans        &kp KP_NUM  &trans   &kp GT       &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+   &kp ESC   &none     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS                                                 &kp RPAR     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS &td_mnc
+   &trans    &none     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS                                                  &kp RBRC     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &trans    &none     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL                                                   &kp RBKT     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL   &kp CARET
+   &trans    &none     &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV     &trans     &trans        &kp KP_NUM  &trans   &kp GT       &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV   &kp PRCNT  
                               &trans       &trans       &trans   &kp KP_ENTER &trans                  &trans   &trans    &kp KP_ENTER  &trans     &kp RALT
             >;
         };
