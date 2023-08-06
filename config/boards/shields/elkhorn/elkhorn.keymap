@@ -165,7 +165,7 @@
         mirror_layer { //3
             bindings = <
    &kp MINUS  &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &kp EQUAL  &kp SEM   &kp Y     &kp U     &kp L     &kp J                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
+   &kp EQUAL  &kp SEMI  &kp Y     &kp U     &kp L     &kp J                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &kp SQT    &kp O     &kp I     &kp E     &kp N     &kp H                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
    &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp K     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
                         &kp RALT  &trans    &trans    &RET      &td_cmk                             &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
