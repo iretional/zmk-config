@@ -14,9 +14,10 @@
 #define CMK 0
 #define QWT 1
 #define MID 2
-#define LWR 3
-#define RSE 4
-#define THN 5
+#define MIR 3
+#define LWR 4
+#define RSE 5
+#define THN 6
 
 
 #define SH LSHFT 
@@ -136,18 +137,18 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &kp LALT   &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &kp TAB            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp LCTRL                        &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp TAB                            &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
             >;
         };
 
         second_layer { //1 qwerty
             bindings = <
-   &trans     &trans    &trans    &trans    &trans    &trans                                                          &trans    &trans    &trans    &trans    &trans      &trans
+   &trans         &trans    &trans    &trans    &trans    &trans                                                      &trans    &trans    &trans    &trans    &trans      &trans
    &lm CMK LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                       &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
    &lm CMK LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                       &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
-   &lm CMK LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &lm CMK TAB     &lm CMK CAPS   &trans    &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
-                            &lm CMK LGUI  &trans    &trans    &trans    &lm CMK LCTRL                &trans     &trans     &trans   &trans   &trans
+   &lm CMK LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none           &lm CMK CAPS   &trans    &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
+                            &lm CMK LGUI  &trans    &trans    &trans    &lm CMK TAB                  &trans     &trans     &trans   &trans   &trans
             >;
         };
         
@@ -160,8 +161,18 @@
                               &trans       &trans       &trans   &kp KP_ENTER &trans                  &trans   &trans    &kp KP_ENTER  &trans     &kp RALT
             >;
         };
+        
+        mirror_layer { //3
+            bindings = <
+   &kp MINUS  &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+   &kp EQUAL  &kp SEM   &kp Y     &kp U     &kp L     &kp J                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
+   &kp SQT    &kp O     &kp I     &kp E     &kp N     &kp H                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
+   &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp K     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+                        &kp RALT  &trans    &trans    &RET      &td_cmk                             &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
+            >;
+        };
 
-        lower_layer { //3
+        lower_layer { //4
             bindings = <
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS &td_mnc
    &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &td_pnq
@@ -171,7 +182,7 @@
             >;
         };
 
-        raise_layer { //4
+        raise_layer { //5
                 bindings = <
    &kp ESC   &none        &none        &none        &none      &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
    &trans    &none        &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
@@ -182,7 +193,7 @@
         };
 
         
-        then_layer { //5
+        then_layer { //6
             bindings = <
    &kp ESC      &kp F1       &kp F2       &kp F3       &kp F4       &kp F5                                                         &kp F6     &kp F7     &kp F8     &kp F9    &kp F10   &kp F11
    &td_btAllClr &bt BT0      &bt BT1      &bt BT2      &bt BT3      &none                                                          &kp VOL_DN &kp VOL_UP &kp C_MUTE &none     &none     &kp F12
