@@ -64,9 +64,9 @@
             tapping-term-ms = <250>;
             bindings = <&mo LWR>, <&mo MID>;
         };
-        td_rseNmid: tap_dance_lwrNmid {
+        td_rseNmid: tap_dance_rseNmid {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_LWR_AND_MID";
+            label = "TAP_DANCE_RSE_AND_MID";
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&mo RSE>, <&mo MID>;
