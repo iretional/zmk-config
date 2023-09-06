@@ -270,7 +270,7 @@
         raise_layer { //5
                 bindings = <
    &kp ESC   &none         &mwh SCL_U12  &mmv MOVE_U9   &mwh SCL_D12   &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
-   &trans    &none         &td_mhu       &td_mvu        &td_mwd        &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &trans    &none         &td_mhu       &td_mvu        &td_mhd        &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
    &trans    &mmv MOVE_L9  &td_mvl       &td_mvd        &td_mvr        &mmv MOVE_R9                                         &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
    &trans    &trans        &td_mhl   &mmv MOVE_D9   &td_mhr    &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
                             &trans     &mkp LCLK   &mkp LCLK   &mkp RCLK  &mkp MCLK                                           &trans   &trans       &kp KP_ENTER &trans    &kp RALT
