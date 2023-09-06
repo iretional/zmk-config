@@ -49,6 +49,23 @@
 #define BT3 BT_SEL 3
 #define BT4 BT_SEL 4
 
+#define MOVE_U3 MOVE_VERT(-300)
+#define MOVE_D3 MOVE_VERT(300)
+#define MOVE_L3 MOVE_HOR(-300)
+#define MOVE_R3 MOVE_HOR(300)
+#define MOVE_U9 MOVE_VERT(-900)
+#define MOVE_D9 MOVE_VERT(900)
+#define MOVE_L9 MOVE_HOR(-900)
+#define MOVE_R9 MOVE_HOR(900)
+#define SCL_U2 SCROLL_VERT(2)
+#define SCL_D2 SCROLL_VERT(-2)
+#define SCL_L2 SCROLL_HOR(-2)
+#define SCL_R2 SCROLL_HOR(2)
+#define SCL_U12 SCROLL_VERT(12)
+#define SCL_D12 SCROLL_VERT(-12)
+#define SCL_L12 SCROLL_HOR(-12)
+#define SCL_R12 SCROLL_HOR(12)
+
 
 &mmv {
     time-to-max-speed-ms = <0>;
@@ -59,27 +76,8 @@
     time-to-max-speed-ms = <0>;
     acceleration-exponent=<0>;
 };
-
-
-#define MOVE_U3 MOVE_VERT(-300)
-#define MOVE_D3 MOVE_VERT(300)
-#define MOVE_L3 MOVE_HOR(-300)
-#define MOVE_R3 MOVE_HOR(300)
-#define MOVE_U9 MOVE_VERT(-900)
-#define MOVE_D9 MOVE_VERT(900)
-#define MOVE_L9 MOVE_HOR(-900)
-#define MOVE_R9 MOVE_HOR(900)
-#define SCL_U5 SCROLL_VERT(5)
-#define SCL_D5 SCROLL_VERT(-5)
-#define SCL_L5 SCROLL_HOR(-5)
-#define SCL_R5 SCROLL_HOR(5)
-#define SCL_U12 SCROLL_VERT(5)
-#define SCL_D12 SCROLL_VERT(-5)
-#define SCL_L12 SCROLL_HOR(-5)
-#define SCL_R12 SCROLL_HOR(5)
-
 &mt {
-    tapping-term-ms = <200>;
+    tapping-term-ms = <100>;
 }; 
 
 &sk {
@@ -138,6 +136,62 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&bt BT_CLR>, <&zed_btAllClr>;
+        };
+        td_mvu: tap_dance_mvu{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MVU";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mmv MOVE_U3>,  <&mmv MOVE_U9>;
+        };
+        td_mvd: tap_dance_mvd{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MVD";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mmv MOVE_D3>,  <&mmv MOVE_D9>;
+        };
+        td_mvl: tap_dance_mvl{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MVL";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mmv MOVE_L3>,  <&mmv MOVE_L9>;
+        };
+        td_mvr: tap_dance_mvr{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MVR";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mmv MOVE_R3>,  <&mmv MOVE_R9>;
+        };
+        td_mhu: tap_dance_mhu{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MHU";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mwh SCL_U2>,  <&mwh SCL_U12>;
+        };
+        td_mhd: tap_dance_mhd{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MHD";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mwh SCL_D2>,  <&mwh SCL_D12>;
+        };
+        td_mhl: tap_dance_mhl{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MHL";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mwh SCL_L2>,  <&mwh SCL_L12>;
+        };
+        td_mhr: tap_dance_mhr{
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_MHR";
+            #binding-cells = <0>;
+            tapping-term-ms = <100>;
+            bindings = <&mwh SCL_R2>,  <&mwh SCL_R12>;
         };
 
         ht_6: behavior_ht_6{
@@ -216,10 +270,10 @@
         raise_layer { //5
                 bindings = <
    &kp ESC   &none         &mwh SCL_U12  &mmv MOVE_U9   &mwh SCL_D12   &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
-   &trans    &none         &mwh SCL_U5   &mmv MOVE_U3   &mwh SCL_D5    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
-   &trans    &mmv MOVE_L9  &mmv MOVE_L3  &mmv MOVE_D3   &mmv MOVE_R3   &mmv MOVE_R9                                         &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
-   &trans    &trans        &mwh SCL_L5   &mmv MOVE_D9   &mwh SCL_R5    &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
-                            &trans     &mkp MCLK   &mkp LCLK   &mkp RCLK  &trans                                           &trans   &trans       &kp KP_ENTER &trans    &kp RALT
+   &trans    &none         &td_mhu       &td_mvu        &td_mwd        &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
+   &trans    &mmv MOVE_L9  &td_mvl       &td_mvd        &td_mvr        &mmv MOVE_R9                                         &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
+   &trans    &trans        &td_mhl   &mmv MOVE_D9   &td_mhr    &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
+                            &trans     &mkp LCLK   &mkp LCLK   &mkp RCLK  &mkp MCLK                                           &trans   &trans       &kp KP_ENTER &trans    &kp RALT
             >;
         };
 
