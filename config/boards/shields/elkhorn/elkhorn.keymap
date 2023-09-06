@@ -8,7 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/mouse.h>
+//#include <dt-bindings/zmk/mouse.h>
 
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 
@@ -214,7 +214,7 @@
             compatible = "zmk,behavior-macro-one-param";
             wait-ms = <0>;
             tap-ms = <0>;
-            #binding-cells = <1>;
+            #binding-cells = <2>;
             bindings
                 = <&macro_tap &to CMK>
                 , <&macro_param_1to1>
