@@ -101,13 +101,6 @@
             tapping-term-ms = <250>;
             bindings = <&mo RSE>, <&mo MID>;
         };
-        td_cmk: tap_dance_cmk  {
-            compatible = "zmk,behavior-tap-dance";
-            label = "tap_dance_cmk";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>;
-            bindings = <&to CMK> , <&to QWT>;
-        };
         td_par: tap_dance_par {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_PAR";
@@ -220,20 +213,20 @@
         main_layer { //0
             bindings = <
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &kp LSHFT  &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
-   &kp LALT   &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp TAB                            &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
+   &kp LSHFT  &kp Q     &kp W     &kp F     &kp P     &kp G                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
+   &kp LALT   &kp A     &kp R     &kp S     &kp T     &kp D                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH
+                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp TAB                                    &kp BSPC   &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
             >;
         };
 
         second_layer { //1 qwerty
             bindings = <
    &trans         &trans    &trans    &trans    &trans    &trans                                                      &trans    &trans    &trans    &trans    &trans      &trans
-   &q2c LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                       &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
-   &q2c LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                       &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
-   &q2c LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none           &q2c CAPS   &trans    &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
-                            &q2c LGUI  &trans    &trans    &trans    &q2c TAB                  &trans     &trans     &trans   &trans   &trans
+   &q2c LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
+   &q2c LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
+   &q2c LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none                &q2c CAPS   &trans     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
+                            &q2c LGUI  &trans    &trans    &trans    &q2c TAB                      &trans     &trans     &trans   &trans   &trans
             >;
         };
         
@@ -253,7 +246,7 @@
    &kp EQUAL  &kp SEMI  &kp Y     &kp U     &kp L     &kp J                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
    &kp SQT    &kp O     &kp I     &kp E     &kp N     &kp H                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
    &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp K     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
-                        &kp RALT  &trans    &trans    &kp RET     &td_cmk                             &td_cmk   &kp RET   &kp SPACE   &sk RSHFT  &zed_cmkRcTog
+                        &kp RALT  &trans    &trans    &kp RET     &trans                              &trans    &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
             >;
         };
 
@@ -322,7 +315,6 @@
                 ;
         };
         
-        ZMK_MACRO(zed_cmkRcTog, wait-ms=<1>; tap-ms=<1>; bindings=<&kp RALT &tog QWT>;)
         ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
             <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
             , <&macro_tap &kp S>
