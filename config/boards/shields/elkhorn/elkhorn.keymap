@@ -223,18 +223,18 @@
         second_layer { //1 qwerty
             bindings = <
    &trans         &trans    &trans    &trans    &trans    &trans                                                      &trans    &trans    &trans    &trans    &trans      &trans
-   &q2c LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
-   &q2c LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
-   &q2c LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none                &q2c CAPS   &trans     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
-                            &q2c LGUI  &trans    &trans    &trans    &q2c TAB                      &trans     &trans     &trans   &trans   &trans
+   &kp LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
+   &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none                &kp CAPS   &trans     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
+                            &kp LGUI  &trans    &trans    &trans    &kp TAB                      &trans     &trans     &trans   &trans   &trans
             >;
         };
         
         mid_layer { //2
             bindings = <
    &kp ESC   &none     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS                                                 &kp RPAR     &kp F10    &kp F11   &kp F12  &none      &none      
-   &trans    &none     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS                                                  &kp RBRC     &kp F7     &kp F8    &kp F9   &none      &none      
-   &trans    &none     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL                                                   &kp RBKT     &kp F4     &kp F5    &kp F6   &none      &none      
+   &kp TAB   &kp BSPC  &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS                                                  &kp RBRC     &kp F7     &kp F8    &kp F9   &none      &none      
+   &kp CAPS  &kp DEL   &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL                                                   &kp RBKT     &kp F4     &kp F5    &kp F6   &none      &none      
    &trans    &none     &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV     &trans     &trans        &kp KP_NUM  &trans   &kp GT       &kp F1     &kp F2    &kp F3   &none      &none       
                               &trans       &trans       &trans   &kp KP_ENTER &trans                  &trans   &trans    &kp KP_ENTER  &trans     &kp RALT
             >;
@@ -243,9 +243,9 @@
         mirror_layer { //3
             bindings = <
    &kp MINUS  &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
-   &kp EQUAL  &kp SEMI  &kp Y     &kp U     &kp L     &kp J                                                           &kp J      &kp L      &kp U      &kp Y     &kp SEMI  &kp EQUAL
-   &kp SQT    &kp O     &kp I     &kp E     &kp N     &kp H                                                           &kp H      &kp N      &kp E      &kp I     &kp O     &kp SQT
-   &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp K     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp K      &kp M      &kp DOT   &kp FSLH  &kp BSLH   
+   &kp EQUAL  &kp P     &kp O     &kp I     &kp U     &kp Y                                                           &kp T      &kp R      &kp E      &kp W     &kp Q     &kp LSHFT
+   &kp SQT    &kp SEMI  &kp L     &kp K     &kp J     &kp H                                                           &kp G      &kp F      &kp D      &kp S     &kp A     &kp LALT
+   &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp N     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp V      &kp C      &kp X      &kp Z     &kp COMMA &kp LCTRL   
                         &kp RALT  &trans    &trans    &kp RET     &trans                              &trans    &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
             >;
         };
@@ -283,37 +283,6 @@
     };
     
     macros {
-        q2c: q2c {
-            label = "LAYER_Q2C";
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings
-                = <&macro_tap &to CMK>
-                , <&macro_param_1to1>
-                , <&macro_press &kp MACRO_PLACEHOLDER>
-                , <&macro_pause_for_release>
-                , <&macro_param_1to1>
-                , <&macro_release &kp MACRO_PLACEHOLDER>
-                , <&macro_tap &to QWT>
-                ;
-        };
-
-        rpt: rpt {
-            label = "LAYER_RPT";
-            compatible = "zmk,behavior-macro-one-param";
-            wait-ms = <0>;
-            tap-ms = <0>;
-            #binding-cells = <1>;
-            bindings
-                = <&macro_param_1to1>
-                , <&kp MACRO_PLACEHOLDER>
-                , <&kp MACRO_PLACEHOLDER>
-                , <&kp MACRO_PLACEHOLDER>
-                , <&kp MACRO_PLACEHOLDER>
-                ;
-        };
         
         ZMK_MACRO(zed_capt,wait-ms=<30>; tap-ms=<30>; bindings= 
             <&macro_press &kp LSHFT>, <&macro_press &kp LGUI>
