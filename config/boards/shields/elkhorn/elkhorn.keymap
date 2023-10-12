@@ -215,38 +215,38 @@
    &kp GRAVE  &kp N1    &kp N2    &kp N3    &kp N4    &kp N5                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
    &kp LSHFT  &kp Q     &kp W     &kp E     &kp R     &kp T                                                           &kp Y      &kp U      &kp I      &kp O     &kp P     &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                           &kp H      &kp J      &kp K      &kp L     &kp SEMI  &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &mo MIR            &kp CAPS  &td_rseNmid  &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH
-                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp TAB                                    &kp BSPC   &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &td_lwrNmid &mo MIR            &kp LALT  &td_rseNmid  &kp B      &kp N      &kp M      &kp DOT   &kp FSLH  &kp BSLH
+                        &kp LGUI  &sk LSHFT &kp SPACE &kp BSPC  &kp TAB                                    &kp LCTRL   &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
             >;
         };
 
         second_layer { //1 qwerty
             bindings = <
-   &trans         &trans    &trans    &trans    &trans    &trans                                                      &trans    &trans    &trans    &trans    &trans      &trans
+   &trans         &trans    &trans    &trans    &trans    &trans                                                     &trans    &trans    &trans    &trans    &trans      &trans
    &kp LSHIFT &kp Q     &kp W     &kp E     &kp R     &kp T                                                          &kp Y     &kp U     &kp I     &kp O     &kp P       &kp EQUAL
    &kp LALT   &kp A     &kp S     &kp D     &kp F     &kp G                                                          &kp H     &kp J     &kp K     &kp L     &kp SEMI    &kp SQT
-   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none                &kp CAPS   &trans     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
-                            &kp LGUI  &trans    &trans    &trans    &kp TAB                      &trans     &trans     &trans   &trans   &trans
+   &kp LCTRL  &kp COMMA &kp Z     &kp X     &kp C     &kp V     &trans   &none                &trans      &trans     &kp B     &kp N     &kp M     &kp DOT   &kp FSLH    &kp BSLH   
+                            &kp LGUI  &trans    &trans    &trans    &kp TAB                        &trans      &trans      &trans      &trans      &trans
             >;
         };
         
         mid_layer { //2
             bindings = <
-   &kp ESC   &none     &kp KP_N7    &kp KP_N8  &kp KP_N9  &kp KP_MINUS                                                 &kp RPAR     &kp F10    &kp F11   &kp F12  &none      &none      
-   &kp TAB   &kp BSPC  &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS                                                  &kp RBRC     &kp F7     &kp F8    &kp F9   &none      &none      
-   &kp CAPS  &kp DEL   &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL                                                   &kp RBKT     &kp F4     &kp F5    &kp F6   &none      &none      
-   &trans    &none     &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV     &trans     &trans        &kp KP_NUM  &trans   &kp GT       &kp F1     &kp F2    &kp F3   &none      &none       
-                              &trans       &trans       &trans   &kp KP_ENTER &trans                  &trans   &trans    &kp KP_ENTER  &trans     &kp RALT
+   &kp ESC   &none     &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS                                                 &kp RPAR     &kp F10    &kp F11   &kp F12  &none      &none      
+   &kp TAB   &kp BSPC  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_PLUS                                                  &kp RBRC     &kp F7     &kp F8    &kp F9   &none      &none      
+   &kp CAPS  &kp DEL   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_MUL                                                   &kp RBKT     &kp F4     &kp F5    &kp F6   &none      &none      
+   &trans    &none     &kp KP_N0  &kp KP_N0  &kp KP_DOT &kp KP_DIV     &trans     &trans        &kp KP_NUM  &trans   &kp GT       &kp F1     &kp F2    &kp F3   &none      &none       
+                             &trans       &trans       &trans     &kp KP_ENTER &trans                 &trans      &kp KP_ENTER   &trans      &trans    &kp RALT
             >;
         };
         
         mirror_layer { //3
             bindings = <
-   &kp MINUS  &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                                                          &kp N6     &kp N7     &kp N8     &kp N9    &kp N0    &kp MINUS
+   &kp MINUS  &kp N0    &kp N9    &kp N8    &kp N7    &kp N6                                                          &kp N5     &kp N4     &kp N3     &kp N2    &kp N1    &kp GRAVE
    &kp EQUAL  &kp P     &kp O     &kp I     &kp U     &kp Y                                                           &kp T      &kp R      &kp E      &kp W     &kp Q     &kp LSHFT
    &kp SQT    &kp SEMI  &kp L     &kp K     &kp J     &kp H                                                           &kp G      &kp F      &kp D      &kp S     &kp A     &kp LALT
-   &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp N     &kp B     &none       &mo MIR            &kp CAPS  &td_rseNmid  &kp V      &kp C      &kp X      &kp Z     &kp COMMA &kp LCTRL   
-                        &kp RALT  &trans    &trans    &kp RET     &trans                              &trans    &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
+   &kp BSLH   &kp FSLH  &kp DOT   &kp M     &kp N     &kp B     &none       &trans             &kp CAPS  &td_rseNmid  &kp V      &kp C      &kp X      &kp Z     &kp COMMA &kp LCTRL   
+                        &kp RALT  &trans    &trans    &kp RET   &kp LCTRL                                   &kp TAB   &kp RET   &kp SPACE   &sk RSHFT  &kp RALT
             >;
         };
 
@@ -256,7 +256,7 @@
    &trans    &kp RBRC     &kp HOME     &kp UP       &kp END    &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5  &kp KP_N6  &kp KP_PLUS  &td_pnq
    &trans    &kp RBKT     &kp LEFT     &kp DOWN     &kp RIGHT  &kp LBKT                                                &kp RBKT     &kp KP_N1    &kp KP_N2  &kp KP_N3  &kp KP_MUL   &kp CARET
    &trans    &kp GT       &none        &none        &none      &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0  &kp KP_DOT &kp KP_DIV   &kp PRCNT  
-                              &trans       &trans       &trans     &kp DEL   &trans                      &trans  &trans       &kp KP_ENTER &trans     &kp RALT
+                              &trans       &trans       &trans     &kp DEL   &kp CAPS                 &kp BSPC  &kp KP_ENTER &trans     &trans      &kp RCTRL
             >;
         };
 
@@ -264,9 +264,9 @@
                 bindings = <
    &kp ESC   &none         &mwh SCL_U12  &mmv MOVE_U9 &mwh SCL_D12 &kp LPAR                                                &kp RPAR     &kp KP_N7    &kp KP_N8 &kp KP_N9  &kp KP_MINUS &td_mnc
    &trans    &none         &mwh SCL_U    &mmv MOVE_U  &mwh SCL_D   &kp LBRC                                                &kp RBRC     &kp KP_N4    &kp KP_N5 &kp KP_N6  &kp KP_PLUS  &td_pnq
-   &trans    &mmv MOVE_L9  &mmv MOVE_L   &mmv MOVE_D  &mmv MOVE_R  &mmv MOVE_R9                                         &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
+   &trans    &mmv MOVE_L9  &mmv MOVE_L   &mmv MOVE_D  &mmv MOVE_R  &mmv MOVE_R9                                            &kp RBKT     &kp KP_N1    &kp KP_N2 &kp KP_N3  &kp KP_MUL   &kp CARET
    &trans    &trans        &mwh SCL_L   &mmv MOVE_D9   &mwh SCL_R  &kp LT    &trans     &trans        &kp KP_NUM &trans    &kp GT       &kp KP_N0    &kp KP_N0 &kp KP_DOT &kp KP_DIV   &kp PRCNT  
-                            &trans     &mkp LCLK   &mkp LCLK   &mkp RCLK  &mkp MCLK                                           &trans   &trans       &kp KP_ENTER &trans    &kp RALT
+                           &trans     &mkp LCLK   &mkp LCLK   &mkp RCLK  &mkp MCLK                               &trans    &kp KP_ENTER &trans       &trans    &kp RALT
             >;
         };
 
