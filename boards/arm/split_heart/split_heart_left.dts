@@ -40,17 +40,25 @@
         compatible = "pwm-leds";
         pwm_led_0 {
             pwms = <&pwm0 0 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
-            label = "Green LED";
-        };
-        pwm_led_1 {
-            pwms = <&pwm0 1 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
             label = "Red LED";
         };
-        pwm_led_2 {
-            pwms = <&pwm0 2 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
-            label = "Blue LED";
-        };
     };
+
+    // back_led_backlight: pwmleds {
+    //     compatible = "pwm-leds";
+    //     pwm_led_0 {
+    //         pwms = <&pwm0 0 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
+    //         label = "Green LED";
+    //     };
+    //     pwm_led_1 {
+    //         pwms = <&pwm0 1 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
+    //         label = "Red LED";
+    //     };
+    //     pwm_led_2 {
+    //         pwms = <&pwm0 2 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
+    //         label = "Blue LED";
+    //     };
+    // };
 };
 
 &pwm0 {
