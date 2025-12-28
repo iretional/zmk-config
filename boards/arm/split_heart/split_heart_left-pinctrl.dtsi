@@ -4,6 +4,7 @@
 // more instructions.
 
 #include <dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <dt-bindings/zmk/backlight.h>
 
 &pinctrl {
     pwm0_default: pwm0_default {
