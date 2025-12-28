@@ -14,6 +14,15 @@ endif # BOARD_SPLIT_HEART_LEFT
 
 if BOARD_SPLIT_HEART_LEFT || BOARD_SPLIT_HEART_RIGHT
 
+config BOARD
+    default "split_heart"
+
+config ZMK_SPLIT
+    default y
+
+config BT_CTLR
+    default BT
+
 if USB
 
 config USB_NRFX
@@ -23,11 +32,5 @@ config USB_DEVICE_STACK
     default y
 
 endif # USB
-
-config ZMK_SPLIT
-    default y
-
-config BT_CTLR
-    default BT
 
 endif # BOARD_SPLIT_HEART_LEFT || BOARD_SPLIT_HEART_RIGHT

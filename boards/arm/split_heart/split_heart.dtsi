@@ -18,33 +18,9 @@
         //zephyr,console = &cdc_acm_uart;
         zephyr,sram = &sram0;
         zephyr,flash = &flash0;
-        // Uncomment this if you enabled one of the "vddh" nodes below.
-        // zmk,battery = &vbatt;
-        zmk,physical-layout = &default_layout;
-    };
-
-    kscan: kscan {
-        // If the hardware does not use a switch matrix, change this to the
-        // appropriate driver and update the properties below to match.
-        // See https://zmk.dev/docs/config/kscan for supported key scan drivers.
-        compatible = "zmk,kscan-gpio-matrix";
-        // Set this to "col2row" or "row2col" to match the hardware. If using
-        // "row2col", change the col-gpios in the _left.overlay and _right.overlay
-        // files to (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN) and the row-gpios here to
-        // GPIO_ACTIVE_HIGH.
-        diode-direction = "col2row";
-        wakeup-source;
-
-        // Replace these comments with the GPIO pins in the matrix.
-        // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
-        row-gpios
-            = <&gpio1 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 1 (top row)
-            , <&gpio1  6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 2
-            , <&gpio1  4 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 3
-            , <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 4 
-            , <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 5 (bottom row)
-            , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // RW 6 (thumb cluster)
-            ;
+        zmk,kscan = &kscan0;
+        zmk,battery = &vbatt;
+        zmk,physical-layout = &default_transform;
     };
 
     default_transform: keymap_transform_0 {

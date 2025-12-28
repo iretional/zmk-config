@@ -15,7 +15,6 @@ CONFIG_GPIO=y
 # Enable pinctrl
 CONFIG_PINCTRL=y
 
-
 # Place application at &code_partition address
 CONFIG_USE_DT_CODE_PARTITION=y
 
@@ -37,5 +36,6 @@ CONFIG_CLOCK_CONTROL_NRF_K32SRC_RC=y
 
 # Enable ZMK BLE and USB output
 CONFIG_ZMK_BLE=y
-CONFIG_ZMK_USB=y
+CONFIG_ZMK_USB=n
+CONFIG_NFCT_PINS_AS_GPIOS=y
 CONFIG_ZMK_POINTING=y
