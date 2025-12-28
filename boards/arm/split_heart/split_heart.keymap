@@ -6,7 +6,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
 #define DEFAULT 0
 #define CLOSE   1
 #define UPPER   2
@@ -28,7 +27,6 @@
         zmk,matrix_transform = &default_transform;
     };
 };
-
 
 / {
     behaviors {
@@ -106,15 +104,11 @@
             bindings = <&kp KP_PLUS>, <&kp EQUAL>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
-
-
-
     };
     
     conditional_layers {
     };
 
-    
     keymap {
         compatible = "zmk,keymap";
         
@@ -162,7 +156,5 @@
                         &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans 
             >;
         };
-
-
     };
 };

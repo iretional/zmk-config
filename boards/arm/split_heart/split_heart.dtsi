@@ -104,6 +104,9 @@
     status = "okay";
 };
 
+zephyr_udc0: &usbd {
+    status = "okay";
+};
 
 // &uart0 {
 //     compatible = "nordic,nrf-uarte";
@@ -112,12 +115,6 @@
 //     pinctrl-1 = <&uart0_sleep>;
 //     pinctrl-names = "default", "sleep";
 // };
-
-
-zephyr_udc0: &usbd {
-    status = "okay";
-};
-
 
 &flash0 {
     /*
