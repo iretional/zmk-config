@@ -19,5 +19,5 @@
 #
 ---
 include:
-  - board: corneish_zen_v2_left
-  - board: corneish_zen_v2_right
+  - board: split_heart_left
+  - board: split_heart_right

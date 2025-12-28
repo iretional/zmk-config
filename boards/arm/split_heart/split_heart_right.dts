@@ -1,0 +1,24 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
+
+#include "split_heart.dtsi"
+#include "split_heart_right-pinctrl.dtsi"
+
+&default_transform {
+    // Set this to the number of columns on the left side.
+    col-offset = <6>;
+};
+
+&kscan {
+    // Replace these comments with the GPIO pins in the matrix for the right side.
+    // See https://zmk.dev/docs/development/hardware-integration/new-shield#shield-overlays
+    col-gpios
+        = <&gpio1 15 GPIO_ACTIVE_HIGH> // Col 1  (Outer)
+        , <&gpio0  3 GPIO_ACTIVE_HIGH> // Col 2 
+        , <&gpio0 29 GPIO_ACTIVE_HIGH> // Col 3
+        , <&gpio0  2 GPIO_ACTIVE_HIGH> // Col 4 
+        , <&gpio0 31 GPIO_ACTIVE_HIGH> // Col 5
+        , <&gpio0 28 GPIO_ACTIVE_HIGH> // Col 6  (Inner)
+        ;
+};
