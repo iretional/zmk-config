@@ -6,8 +6,10 @@
 /dts-v1/;
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <dt-bindings/zmk/matrix_transform.h>
-
+#include "split_heart_left-pinctrl.dtsi"
+#include "split_heart_right-pinctrl.dtsi"
 #include "split_heart-layouts.dtsi"
+
 
 / {
     model = "Split Heart";
@@ -22,6 +24,7 @@
         zmk,battery = &vbatt;
         zmk,matrix_transform = &default_transform;
         zmk,physical-layout = &default_layout;
+        zmk,backlight = &backlight;
     };
 
     
@@ -52,21 +55,37 @@
         >;
     };
 
-    leds {
-        compatible = "gpio-leds";
-        led_green: led_0 {
-            gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;  // P0.04, Active LOW (3.8V에서 당김)
+    backlight: pwmleds {
+        compatible = "pwm-leds";
+        pwm_led_0 {
+            pwms = <&pwm0 0 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
             label = "Green LED";
         };
-        led_red: led_1 {
-            gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;   // P0.06, Active LOW
+        pwm_led_1 {
+            pwms = <&pwm0 1 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
             label = "Red LED";
         };
-        led_blue: led_2 {
-            gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   // P0.08, Active LOW
+        pwm_led_2 {
+            pwms = <&pwm0 2 PWM_MSEC(10) PWM_POLARITY_INVERTED>;
             label = "Blue LED";
         };
     };
+
+    // leds {
+    //     compatible = "gpio-leds";
+    //     led_green: led_0 {
+    //         gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;  // P0.04, Active LOW (3.8V에서 당김)
+    //         label = "Green LED";
+    //     };
+    //     led_red: led_1 {
+    //         gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;   // P0.06, Active LOW
+    //         label = "Red LED";
+    //     };
+    //     led_blue: led_2 {
+    //         gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;   // P0.08, Active LOW
+    //         label = "Blue LED";
+    //     };
+    // };
 
     // If you are powering the SoC from the VDDH pin, uncomment this block.
     // Otherwise, delete it.
@@ -104,10 +123,16 @@
     status = "okay";
 };
 
+&pwm0 {
+    status = "okay";
+    pinctrl-0 = <&pwm0_default>;
+    pinctrl-1 = <&pwm0_sleep>;
+    pinctrl-names = "default", "sleep";
+};
+
 zephyr_udc0: &usbd {
     status = "okay";
 };
-
 // &uart0 {
 //     compatible = "nordic,nrf-uarte";
 //     current-speed = <115200>;
