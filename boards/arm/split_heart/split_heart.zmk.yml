@@ -16,6 +16,7 @@ url: https://example.com
 features:
   - keys
   - studio  # Remove this line if your keyboard will not support ZMK Studio
+  - backlight
 outputs:
   - usb
   - ble
