@@ -137,23 +137,23 @@
 
         upr_layer {
             bindings = <
-&kp KP_NUM  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS 
-&kp CAPS    &kp Q       &kp HOME    &kp UP      &kp END     &msc SCRL_UP    &kp Y       &kp U       &kp I       &kp O       &kp P       &kp EQUAL
-&kp LCTRL   &kp A       &kp LEFT    &kp DOWN    &kp RIGHT   &msc SCRL_DOWN  &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
-&kp LSHFT   &kp LALT    &kp PG_UP   &kp PG_DN   &mkp MB4    &mkp MB5        &kp B       &kp N       &kp M       &kp DOT     &kp SLASH   &kp BSLH
-                        &kp LGUI    &kp ENTER                                                       &kp COMMA   &kp LANG1       
-                        &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans 
+&kp KP_NUM  &kp N1      &kp N2      &kp N3      &kp N4      &kp N5          &bt BT_SEL 0   &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_CLR
+&kp CAPS    &kp PG_UP   &kp HOME    &kp UP      &kp END     &msc SCRL_UP    &none          &none        &none        &none        &none         &bt BT_CLR_ALL
+&kp LCTRL   &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   &msc SCRL_DOWN  &kp C_MUTE     &kp C_VOL_UP &kp C_VOL_DN &none        &none         &none
+&kp LSHFT   &mkp MB1    &mkp MB2    &mkp MB3    &mkp MB4    &mkp MB5        &bl BL_CYCLE   &bl BL_TOG   &none        &none        &none         &none
+                        &kp PSCRN   &kp ENTER                                                           &none        &none       
+                        &trans      &trans      &trans      &trans          &none          &none        &none        &none 
             >;
         };
 
         lwr_layer {
             bindings = <
-&kp MINUS   &kp N0      &kp N9      &kp N8      &kp N7      &kp N6          &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS 
-&kp EQUAL   &kp P       &kp O       &kp I       &kp U       &kp Y           &kp Y       &kp U       &kp I       &kp O       &kp P       &kp EQUAL
-&kp SQT     &kp SEMI    &kp L       &kp K       &kp J       &kp H           &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
-&kp BSLH    &kp SLASH   &kp DOT     &kp M       &kp N       &kp B           &kp B       &kp N       &kp M       &kp DOT     &kp SLASH   &kp BSLH
-                        &kp LANG1   &kp COMMA                                                       &kp COMMA   &kp LANG1       
-                        &trans      &trans      &trans      &trans          &trans      &trans      &trans      &trans 
+&kp MINUS    &kp N0       &kp N9       &kp N8       &kp N7       &kp N6          &kp N6       &kp N7       &kp N8       &kp N9       &kp N0       &kp MINUS 
+&kp EQUAL    &kp P        &kp O        &kp I        &kp U        &kp Y           &kp Y        &kp U        &kp I        &kp O        &kp P        &kp EQUAL
+&kp SQT      &kp SEMI     &kp L        &kp K        &kp J        &kp H           &kp H        &kp J        &kp K        &kp L        &kp SEMI     &kp SQT
+&kp BSLH     &kp SLASH    &kp DOT      &kp M        &kp N        &kp B           &kp B        &kp N        &kp M        &kp DOT      &kp SLASH    &kp BSLH
+                          &kp LANG1    &kp COMMA                                                           &kp COMMA    &kp LANG1       
+                          &trans       &trans       &trans       &trans          &trans       &trans       &trans       &trans 
             >;
         };
     };
