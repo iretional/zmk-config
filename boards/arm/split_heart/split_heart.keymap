@@ -13,16 +13,8 @@
 #define KP_DIV KP_DIVIDE
 #define KP_COM KP_COMMA
 
-#define MUP MOVE_Y(-600)
-#define MDN MOVE_Y(600)
-#define ML MOVE_X(-600)
-#define MR MOVE_X(600)
-
-#define MMUP MOVE_Y(-1500)
-#define MMDN MOVE_Y(1500)
-#define MML MOVE_X(-1500)
-#define MmR MOVE_X(1500)
-
+#define MY(vert) ((vert) & 0xFFFF)
+#define MX(hor) (((hor) & 0xFFFF) << 16)
 
 &lt {
     tapping-term-ms = <200>; // This is the value already set by default
@@ -143,10 +135,10 @@
 
         navigation_layer { // 2
             bindings = <
-&kp KP_NUM    &none         &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MMUP      &none           &none           &none
-&kp CAPS      &none         &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MUP       &none           &none           &none
-&trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MML       &mmv ML         &mmv MDN       &mmv MR         &mmv MMR        &none
-&kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MMDN      &none           &none           &none
+&kp KP_NUM    &none         &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MY(-1500) &none           &none           &none
+&kp CAPS      &none         &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
+&trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
+&kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
                             &none         &mkp MB3                                                                   &none          &none       
                             &kp LC(BSPC)  &kp DEL       &kp ESC       &kp LGUI        &none          &none           &none          &none 
             >;
