@@ -140,7 +140,7 @@
 &trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
 &kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
                             &none         &mkp MB3                                                                   &none          &none       
-                            &kp DEL       &kp LC(BSPC)  &kp ESC       &kp LGUI        &trans         &trans          &trans         &trans 
+                            &kp DEL       &kp LC(BSPC)  &trans        &trans          &trans         &trans          &trans         &trans 
             >;
         };
 
