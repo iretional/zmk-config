@@ -136,7 +136,7 @@
         navigation_layer { // 2
             bindings = <
 &kp KP_NUM    &kp PSCRN     &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MY(-1500) &none           &none           &none
-&kp CAPS      &none         &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
+&kp CAPS      &kp DEL       &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
 &trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
 &kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
                             &none         &mkp MB3                                                                   &none          &none       
