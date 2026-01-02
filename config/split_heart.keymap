@@ -114,8 +114,8 @@
             bindings = <
 &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS 
 &lt 4 TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
-&kp LCTRL     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
-&kp LSHFT     &lt 2 DEL     &kp Z         &kp X         &kp C         &kp V           &kp B          &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH
+&kp LCTRL     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &kp J          &kp K          &kp L          &kp DOT        &kp SQT
+&kp LSHFT     &lt 2 DEL     &kp Z         &kp X         &kp C         &kp V           &kp B          &kp N          &kp M          &kp COMMA      &kp SEMI       &kp SLASH
                             &kp LGUI      &kp ENTER                                                                 &kp LBKT       &kp RBKT       
                             &kp SPACE     &kp BSPC      &lt 1 ESC     &kp LALT        &kp LANG2      &lt 5 LANG1    &lt 3 ENTER    &kp RSHFT      
             >;
@@ -159,8 +159,8 @@
             bindings = <
 &kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7       &kp N6          &kp N5       &kp N4       &kp N3       &kp N2       &kp N1       &kp GRAVE 
 &trans       &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E        &kp W        &kp Q        &kp TAB
-&kp SQT      &kp SEMI       &kp L         &kp K         &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
-&kp SLASH    &kp DOT        &kp COMMA     &kp M         &kp N        &kp B           &kp V        &kp C        &kp X        &kp Z        &kp ESC      &kp LSHFT
+&kp SQT      &kp DOT        &kp L         &kp K         &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
+&kp SLASH    &kp SEMI       &kp COMMA     &kp M         &kp N        &kp B           &kp V        &kp C        &kp X        &kp Z        &kp ESC      &kp LSHFT
                             &kp RBKT      &kp LBKT                                                             &kp ENTER    &kp LGUI  
                             &kp RSHFT     &kp ENTER     &kp LANG1    &kp LANG2       &kp LALT     &kp LCTRL    &kp BSPC     &trans
             >;             
