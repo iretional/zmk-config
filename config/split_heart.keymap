@@ -114,10 +114,10 @@
             bindings = <
 &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS 
 &lt 4 TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
-&lt 2 ESC     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
-&kp LSHFT     &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH      &kp BSLH
+&kp LCTRL     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &kp J          &kp K          &kp L          &kp SEMI       &kp SQT
+&kp LSHFT     &lt 2 DEL     &kp Z         &kp X         &kp C         &kp V           &kp B          &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH
                             &kp LGUI      &kp ENTER                                                                 &kp LBKT       &kp RBKT       
-                            &kp SPACE     &lt 1 BSPC    &kp LCTRL     &kp LALT        &kp LANG2      &kp LANG1      &lt 3 ENTER    &kp RSHFT      
+                            &kp SPACE     &kp BSPC      &lt 1 ESC     &kp LALT        &kp LANG2      &lt 5 LANG1    &lt 3 ENTER    &kp RSHFT      
             >;
         };
 
@@ -126,9 +126,9 @@
 &kp LBKT      &kp RBKT      &kp COMMA     &kp KP_DIV    &kp KP_MULT   &kp BSPC        &none          &kp F10        &kp F11        &kp F12        &none          &none
 &kp LBRC      &kp RBRC      &kpn7         &kpn8         &kpn9         &kpminus        &none          &kp F7         &kp F8         &kp F9         &none          &none
 &kp LPAR      &kp RPAR      &kpn4         &kpn5         &kpn6         &kpplus         &none          &kp F4         &kp F5         &kp F6         &none          &none
-&kp LT        &kp GT        &kpn1         &kpn2         &kpn3         &kp EQUAL       &none          &kp F1         &kp F2         &kp F3         &none          &none
+&kp LT        &kp GT        &kpn1         &kpn2         &kpn3         &kp EQUAL       &none          &kp F1         &kp F2         &kp F3         &none          &kp BSLH
                             &kpn0         &kp KP_DOT                                                                &none          &none
-                            &none         &trans        &trans        &trans          &trans         &trans         &trans         &trans 
+                            &trans        &trans        &trans        &trans          &trans         &trans         &trans         &trans 
             >;
         };
 
@@ -138,7 +138,7 @@
 &kp KP_NUM    &kp PSCRN     &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MY(-1500) &none           &none           &none
 &kp CAPS      &kp DEL       &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
 &trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
-&kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
+&kp LSHFT     &trans        &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
                             &none         &mkp MB3                                                                   &none          &none       
                             &kp DEL       &kp LC(BSPC)  &trans        &trans          &trans         &trans          &trans         &trans 
             >;
@@ -149,7 +149,7 @@
 &kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7        &kp N6          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_CLR
 &kp EQUAL    &kp P          &kp O         &kp I         &kp U         &kp Y           &none          &none          &none        &none        &none         &bt BT_CLR_ALL
 &kp SQT      &kp SEMI       &kp L         &kp K         &kp J         &kp H           &kp C_MUTE     &kp C_VOL_UP   &kp C_VOL_DN &none        &none         &none
-&kp BSLH     &kp SLASH      &kp DOT       &kp M         &kp N         &kp B           &bl BL_CYCLE   &bl BL_TOG     &none        &none        &none         &none
+&kp BSLH     &kp SLASH      &kp DOT       &kp M         &kp N         &kp B           &bl BL_CYCLE   &bl BL_TOG     &none        &none        &none         &kp BSLH
                             &kp LANG1     &kp COMMA                                                                 &none        &none      
                             &trans        &trans        &trans        &trans          &trans         &trans         &lt 4 ENTER  &trans
             >;
@@ -157,16 +157,26 @@
 
         mirror_layer { // 4
             bindings = <
-&kp MINUS    &kp N0       &kp N9       &kp N8       &kp N7       &kp N6          &kp N5       &kp N4       &kp N3       &kp N2       &kp N1       &kp GRAVE 
-&trans       &kp P        &kp O        &kp I        &kp U        &kp Y           &kp T        &kp R        &kp E        &kp W        &kp Q        &kp TAB
-&kp SQT      &kp SEMI     &kp L        &kp K        &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
-&kp BSLH     &kp SLASH    &kp DOT      &kp COMMA    &kp M        &kp N           &kp B        &kp V        &kp C        &kp X        &kp Z        &kp LSHFT
-                          &kp RBKT     &kp LBKT                                                            &kp ENTER    &kp LGUI  
-                          &kp RSHFT    &kp ENTER    &kp LANG1    &kp LANG2       &kp LALT     &kp LCTRL    &kp BSPC      &trans
+&kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7       &kp N6          &kp N5       &kp N4       &kp N3       &kp N2       &kp N1       &kp GRAVE 
+&trans       &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E        &kp W        &kp Q        &kp TAB
+&kp SQT      &kp SEMI       &kp L         &kp K         &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
+&kp SLASH    &kp DOT        &kp COMMA     &kp M         &kp N        &kp B           &kp V        &kp C        &kp X        &kp Z        &kp ESC      &kp LSHFT
+                            &kp RBKT      &kp LBKT                                                             &kp ENTER    &kp LGUI  
+                            &kp RSHFT     &kp ENTER     &kp LANG1    &kp LANG2       &kp LALT     &kp LCTRL    &kp BSPC     &trans
             >;             
         };
 
 
+        sub_navigation_layer { // 5
+            bindings = <
+&kp KP_NUM    &kp PSCRN     &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &none          &none           &none           &none
+&kp CAPS      &kp DEL       &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &kp UP          &none          &none           &none           &none
+&trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &kp LEFT       &kp DOWN        &kp RIGHT      &none           &none           &none
+&kp LSHFT     &none         &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &none          &none           &none           &none
+                            &none         &mkp MB3                                                                   &none          &none       
+                            &kp DEL       &kp LC(BSPC)  &trans        &trans          &trans         &trans          &trans         &trans 
+            >;
+        };
 
 
     };
