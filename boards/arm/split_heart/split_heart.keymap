@@ -129,6 +129,20 @@
             hold-trigger-key-positions = < KEYS_L THUMBS >; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
+
+        tdshl1: tap_dance_shift_L1 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&kp LSHFT>, <&mo 1>;
+        };
+
+        tdmb45: tap_dance_mouse_m45 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <180>;
+            bindings = <&mkp MB4>, <&mkp MB5>;
+        };
     };
 
     conditional_layers {
@@ -138,6 +152,56 @@
             then-layer = <4>;
         };
     };
+
+    combos {
+        compatible = "zmk,combos";
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+        combo_lbrc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+        combo_rbrc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+        combo_lt {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+        combo_rt {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <1>;
+            bindings = <&kp ESC>;
+        };
+
+    };
+
+/* 
+0  1  2  3  4  5     6  7  8  9  10 11
+12 13 14 15 16 17    18 19 20 21 22 23
+24 25 26 27 28 29    30 31 32 33 34 35
+36 37 38 39 40 41    42 43 44 45 46 47
+      48 49                50 51
+      52 53 54 55    56 57 58 59
+*/
 
     keymap {
         compatible = "zmk,keymap";
@@ -149,7 +213,7 @@
 &kp LALT      &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SEMI       &kp SQT
 &kp LC(LSHFT) &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH      &kp LANG2
                             &kp LGUI      &kp ENTER                                                                 &kp LBKT       &kp RBKT       
-                            &kp LSHIFT    &kp SPACE     &lt 1 BSPC    &kp LCTRL       &kp ESC        &lt 5 LANG1    &lt 3 ENTER    &kp RSHFT      
+                            &tdshl1       &kp SPACE     &kp BSPC    &kp LCTRL         &kp ESC        &lt 5 LANG1    &lt 3 ENTER    &kp RSHFT      
             >;
         };
 
@@ -170,7 +234,7 @@
 &kp KP_NUM    &kp PSCRN     &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MY(-1500) &none           &none           &none
 &kp CAPS      &kp DEL       &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
 &trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
-&kp LSHFT     &trans        &mkp MB1      &mkp MB2      &mkp MB4      &mkp MB5        &none          &none           &mmv MY(1500)  &none           &none           &none
+&kp LSHFT     &trans        &mkp MB1      &mkp MB2      &tdmb45       &mkp SPACE      &none          &none           &mmv MY(1500)  &none           &none           &none
                             &none         &mkp MB3                                                                   &none          &none       
                             &kp DEL       &kp LC(BSPC)  &trans        &trans          &trans         &trans          &trans         &trans 
             >;
