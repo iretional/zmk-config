@@ -209,9 +209,9 @@
         default_layer {
             bindings = <
 &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS 
-&lt 2 TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
-&kp LALT      &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SEMI       &kp SQT
-&kp LC(LSHFT) &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH      &kp LANG2
+&lt 4 TAB     &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
+&lt 2 ESC     &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SEMI       &kp SQT
+&kp LALT      &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SLASH      &kp LANG2
                             &kp LGUI      &kp ENTER                                                                 &kp LBKT       &kp RBKT       
                             &tdshl1       &kp SPACE     &kp BSPC    &kp LCTRL         &lt 5 LANG1    &lt 3 ENTER    &kp SPACE      &kp RSHFT      
             >;
@@ -232,11 +232,11 @@
         navigation_layer { // 2
             bindings = <
 &kp KP_NUM    &kp PSCRN     &kp PG_UP     &none         &kp PG_DN     &none           &none          &none           &mmv MY(-1500) &none           &none           &none
-&kp CAPS      &kp DEL       &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
+&kp CAPS      &none         &kp HOME      &kp UP        &kp END       &msc SCRL_UP    &none          &none           &mmv MY(-600)  &none           &none           &none
 &trans        &none         &kp LEFT      &kp DOWN      &kp RIGHT     &msc SCRL_DOWN  &mmv MX(-1500) &mmv MX(-600)   &mmv MY(600)   &mmv MX(600)    &mmv MX(1500)   &none
-&kp LSHFT     &trans        &mkp MB1      &mkp MB2      &tdmb45       &mkp SPACE      &none          &none           &mmv MY(1500)  &none           &none           &none
-                            &none         &mkp MB3                                                                   &none          &none       
-                            &kp DEL       &kp LC(BSPC)  &trans        &trans          &trans         &trans          &trans         &trans 
+&kp LSHFT     &trans        &mkp MB1      &mkp MB2      &mkp MB3      &tdmb45         &none          &none           &mmv MY(1500)  &none           &none           &none
+                            &none         &kp DEL                                                                    &none          &none       
+                            &trans        &trans        &trans        &trans          &trans         &trans          &trans         &trans 
             >;
         };
 
@@ -255,10 +255,10 @@
             bindings = <
 &kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7       &kp N6          &kp N5       &kp N4       &kp N3       &kp N2       &kp N1       &kp GRAVE 
 &trans       &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E        &kp W        &kp Q        &kp TAB
-&kp SQT      &kp DOT        &kp L         &kp K         &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
-&kp SLASH    &kp SEMI       &kp COMMA     &kp M         &kp N        &kp B           &kp V        &kp C        &kp X        &kp Z        &kp ESC      &kp LSHFT
+&kp SQT      &kp SEMI       &kp L         &kp K         &kp J        &kp H           &kp G        &kp F        &kp D        &kp S        &kp A        &kp ESC
+&kp LANG2    &kp SLASH      &kp DOT       &kp COMMA     &kp M        &kp N           &kp B        &kp V        &kp C        &kp X        &kp Z        &kp LALT
                             &kp RBKT      &kp LBKT                                                             &kp ENTER    &kp LGUI  
-                            &kp RSHFT     &kp ENTER     &kp LANG1    &kp LANG2       &kp LALT     &kp LCTRL    &kp BSPC     &trans
+                            &kp RSHFT     &kp SPACE     &kp ENTER    &kp LANG1       &kp LALT     &kp LCTRL    &kp BSPC     &trans
             >;             
         };
 
