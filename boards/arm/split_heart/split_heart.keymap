@@ -219,7 +219,7 @@
 &lt 4 ESC     &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SEMI       &kp BSLH
 &kp LSHIFT    &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp LBKT       &kp RBKT
                             &kp LGUI      &kp LALT                                                                  &kp SLASH      &kp SQT
-                            &lt 1 BSPC    &kp SPACE     &lt 2 ENTER   &kp LCTRL       &lt 5 LANG1    &lt 3 ENTER    &kp SPACE      &kp RSHFT      
+                            &lt 1 BSPC    &kp ENTER     &lt 2 ENTER   &kp LCTRL       &lt 5 LANG1    &lt 3 ENTER    &kp SPACE      &kp RSHFT      
             >;
         };
 
