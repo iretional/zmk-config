@@ -32,6 +32,32 @@
 
 / {
     behaviors {
+
+        upi: up_arrow_i {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&kp UP>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        downk: down_arrow_k {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&kp DOWN>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        leftj: left_arrow_j {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&kp LEFT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        rightl: right_arrow_l {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp L>, <&kp RIGHT>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         kpn1: kpn1_shiftn1 {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -215,11 +241,11 @@
         default_layer {
             bindings = <
 &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS 
-&kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
-&lt 4 DEL     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &kp J          &kp K          &kp L          &kp SLASH      &kp SEMI
+&kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &upi           &kp O          &kp P          &kp EQUAL
+&lt 4 DEL     &kp A         &kp S         &kp D         &kp F         &kp G           &kp H          &leftj         &downk         &rightl        &kp SLASH      &kp SEMI
 &kp LSHIFT    &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SQT        &kp LANG2
                             &kp LGUI      &kp LALT                                                                  &kp LBKT       &kp RBKT
-                            &kp BSPC      &lt 1 ENTER     &lt 2 ESC     &kp LCTRL     &lt 5 LANG1    &lt 3 ENTER    &kp SPACE      &kp RSHFT      
+                            &kp BSPC      &lt 1 ENTER   &lt 2 ESC     &kp LCTRL       &lt 5 LANG1    &lt 1 ENTER    &kp SPACE      &kp RSHFT      
             >;
         };
 
