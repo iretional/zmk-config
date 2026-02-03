@@ -260,7 +260,7 @@
         mirror_layer { // 4
             bindings = <
 &kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7       &kp N6          &kp N5       &kp N4       &kp N3        &kp N2       &kp N1       &kp GRAVE 
-&trans       &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E         &kp W        &kp Q        &kp TAB
+&kp EQUAL    &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E         &kp W        &kp Q        &kp TAB
 &trans       &kp SLASH      &hml LALT L   &hml LSHIFT K &hml LCTRL J &kp H           &kp G        &hmr LCTRL F &hmr RSHIFT D &hmr LALT S  &kp A        &kp ESC
 &kp LANG2    &kp SQT        &kp DOT       &kp COMMA     &kp M        &kp N           &kp B        &kp V        &kp C         &kp X        &kp Z        &kp LALT
                             &kp RBKT      &kp LBKT                                                             &kp ENTER     &kp LGUI  
