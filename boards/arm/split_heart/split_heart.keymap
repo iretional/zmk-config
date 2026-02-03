@@ -216,9 +216,9 @@
             bindings = <
 &kp GRAVE     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6         &kp N7         &kp N8         &kp N9         &kp N0         &kp MINUS 
 &kp TAB       &kp Q         &kp W         &kp E         &kp R         &kp T           &kp Y          &kp U          &kp I          &kp O          &kp P          &kp EQUAL
-&lt 4 DEL     &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SEMI       &kp BSLH
-&kp LSHIFT    &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp LBKT       &kp RBKT
-                            &kp LGUI      &kp LALT                                                                  &kp SLASH      &kp SQT
+&lt 4 DEL     &kp A         &hml LALT S   &hml LSHIFT D &hml LCTRL F  &kp G           &kp H          &hmr LCTRL J   &hmr RSHIFT K  &hmr LALT L    &kp SLASH      &kp SEMI
+&kp LSHIFT    &kp Z         &kp X         &kp C         &kp V         &kp B           &kp N          &kp M          &kp COMMA      &kp DOT        &kp SQT        &kp LANG2
+                            &kp LGUI      &kp LALT                                                                  &kp LBKT       &kp RBKT
                             &lt 1 BSPC    &kp ENTER     &lt 2 ESC     &kp LCTRL       &lt 5 LANG1    &lt 3 ENTER    &kp SPACE      &kp RSHFT      
             >;
         };
@@ -248,12 +248,12 @@
 
         system_layer { // 3
             bindings = <
-&trans       &kp N0         &kp N9        &kp N8        &kp N7        &kp N6          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_CLR
-&trans       &kp P          &kp O         &kp I         &kp U         &kp Y           &none          &none          &none        &none        &none         &bt BT_CLR_ALL
-&trans       &kp SEMI       &kp L         &kp K         &kp J         &kp H           &kp C_MUTE     &kp C_VOL_UP   &kp C_VOL_DN &none        &none         &none
-&trans       &kp SLASH      &kp DOT       &kp M         &kp N         &kp B           &bl BL_CYCLE   &bl BL_TOG     &none        &none        &none         &kp BSLH
+&kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7        &kp N6          &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4  &bt BT_CLR
+&kp EQUAL    &kp P          &kp O         &kp I         &kp U         &kp Y           &none          &none          &none        &none        &none         &bt BT_CLR_ALL
+&trans       &kp SLASH      &kp L         &kp K         &kp J         &kp H           &kp C_MUTE     &kp C_VOL_UP   &kp C_VOL_DN &none        &none         &none
+&kp LANG2    &kp SQT        &kp DOT       &kp M         &kp N         &kp B           &bl BL_CYCLE   &bl BL_TOG     &none        &none        &none         &kp BSLH
                             &kp LANG1     &kp COMMA                                                                 &none        &none      
-                            &trans        &trans        &trans        &trans          &trans         &trans         &lt 4 ENTER  &trans
+                            &trans        &trans        &trans        &trans          &trans         &trans         &trans       &trans
             >;
         };
 
@@ -261,8 +261,8 @@
             bindings = <
 &kp MINUS    &kp N0         &kp N9        &kp N8        &kp N7       &kp N6          &kp N5       &kp N4       &kp N3        &kp N2       &kp N1       &kp GRAVE 
 &trans       &kp P          &kp O         &kp I         &kp U        &kp Y           &kp T        &kp R        &kp E         &kp W        &kp Q        &kp TAB
-&kp SQT      &kp SEMI       &hml LALT L   &hml LSHIFT K &hml LCTRL J &kp H           &kp G        &hmr LCTRL F &hmr RSHIFT D &hmr LALT S  &kp A        &kp ESC
-&kp LANG2    &kp SLASH      &kp DOT       &kp COMMA     &kp M        &kp N           &kp B        &kp V        &kp C         &kp X        &kp Z        &kp LALT
+&trans       &kp SLASH      &hml LALT L   &hml LSHIFT K &hml LCTRL J &kp H           &kp G        &hmr LCTRL F &hmr RSHIFT D &hmr LALT S  &kp A        &kp ESC
+&kp LANG2    &kp SQT        &kp DOT       &kp COMMA     &kp M        &kp N           &kp B        &kp V        &kp C         &kp X        &kp Z        &kp LALT
                             &kp RBKT      &kp LBKT                                                             &kp ENTER     &kp LGUI  
                             &kp RSHFT     &kp SPACE     &kp ENTER    &kp LANG1       &kp LALT     &kp LCTRL    &kp BSPC      &trans
             >;             
