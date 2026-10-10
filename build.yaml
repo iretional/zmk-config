@@ -19,5 +19,10 @@
 #
 ---
 include:
+  # The left half is the USB/BLE central: Studio RPC lives here only.
   - board: split_heart_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # The right half remains a BLE peripheral.
   - board: split_heart_right
