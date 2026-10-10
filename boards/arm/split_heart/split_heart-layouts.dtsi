@@ -1,23 +1,84 @@
-// See https://zmk.dev/docs/development/hardware-integration/physical-layouts
-// for how to configure this.
-
+// 60-key Split Heart physical layout in matrix/keymap order (0..59).
+// SCHEMATIC ONLY: The x/y values approximate the 6+6 columns and thumb
+// clusters shown in split_heart.dtsi. These are not PCB-measured coordinates.
+// Adjust x/y/rotation to match the actual keyboard when artwork is available.
+// Units: centi-key-units (100 = 1u). Do NOT reorder key entries.
 #include <physical_layouts.dtsi>
 
 / {
     default_layout: default_layout {
         compatible = "zmk,physical-layout";
-        display-name = "Default Layout";
+        display-name = "Split Heart (schematic)";
         transform = <&default_transform>;
         kscan = <&kscan0>;
 
-        // Edit this to define the positions and sizes of the keys, or remove it
-        // if your keyboard will not support ZMK Studio.
-        // https://zmk.dev/docs/development/hardware-integration/physical-layouts#optional-keys-property
-        keys  //                     w   h    x    y     rot    rx    ry
-            = <&key_physical_attrs 100 100    0    0       0     0     0>
-            , <&key_physical_attrs 100 100  100    0       0     0     0>
-            , <&key_physical_attrs 100 100    0  100       0     0     0>
-            , <&key_physical_attrs 100 100  100  100       0     0     0>
+        keys =
+            // Main row 1
+              <&key_physical_attrs 100 100 0 0 0 0 0> // 0
+            , <&key_physical_attrs 100 100 110 0 0 0 0> // 1
+            , <&key_physical_attrs 100 100 220 0 0 0 0> // 2
+            , <&key_physical_attrs 100 100 330 0 0 0 0> // 3
+            , <&key_physical_attrs 100 100 440 0 0 0 0> // 4
+            , <&key_physical_attrs 100 100 550 0 0 0 0> // 5
+            , <&key_physical_attrs 100 100 800 0 0 0 0> // 6
+            , <&key_physical_attrs 100 100 910 0 0 0 0> // 7
+            , <&key_physical_attrs 100 100 1020 0 0 0 0> // 8
+            , <&key_physical_attrs 100 100 1130 0 0 0 0> // 9
+            , <&key_physical_attrs 100 100 1240 0 0 0 0> // 10
+            , <&key_physical_attrs 100 100 1350 0 0 0 0> // 11
+            // Main row 2
+            , <&key_physical_attrs 100 100 0 110 0 0 0> // 12
+            , <&key_physical_attrs 100 100 110 110 0 0 0> // 13
+            , <&key_physical_attrs 100 100 220 110 0 0 0> // 14
+            , <&key_physical_attrs 100 100 330 110 0 0 0> // 15
+            , <&key_physical_attrs 100 100 440 110 0 0 0> // 16
+            , <&key_physical_attrs 100 100 550 110 0 0 0> // 17
+            , <&key_physical_attrs 100 100 800 110 0 0 0> // 18
+            , <&key_physical_attrs 100 100 910 110 0 0 0> // 19
+            , <&key_physical_attrs 100 100 1020 110 0 0 0> // 20
+            , <&key_physical_attrs 100 100 1130 110 0 0 0> // 21
+            , <&key_physical_attrs 100 100 1240 110 0 0 0> // 22
+            , <&key_physical_attrs 100 100 1350 110 0 0 0> // 23
+            // Main row 3
+            , <&key_physical_attrs 100 100 0 220 0 0 0> // 24
+            , <&key_physical_attrs 100 100 110 220 0 0 0> // 25
+            , <&key_physical_attrs 100 100 220 220 0 0 0> // 26
+            , <&key_physical_attrs 100 100 330 220 0 0 0> // 27
+            , <&key_physical_attrs 100 100 440 220 0 0 0> // 28
+            , <&key_physical_attrs 100 100 550 220 0 0 0> // 29
+            , <&key_physical_attrs 100 100 800 220 0 0 0> // 30
+            , <&key_physical_attrs 100 100 910 220 0 0 0> // 31
+            , <&key_physical_attrs 100 100 1020 220 0 0 0> // 32
+            , <&key_physical_attrs 100 100 1130 220 0 0 0> // 33
+            , <&key_physical_attrs 100 100 1240 220 0 0 0> // 34
+            , <&key_physical_attrs 100 100 1350 220 0 0 0> // 35
+            // Main row 4
+            , <&key_physical_attrs 100 100 0 330 0 0 0> // 36
+            , <&key_physical_attrs 100 100 110 330 0 0 0> // 37
+            , <&key_physical_attrs 100 100 220 330 0 0 0> // 38
+            , <&key_physical_attrs 100 100 330 330 0 0 0> // 39
+            , <&key_physical_attrs 100 100 440 330 0 0 0> // 40
+            , <&key_physical_attrs 100 100 550 330 0 0 0> // 41
+            , <&key_physical_attrs 100 100 800 330 0 0 0> // 42
+            , <&key_physical_attrs 100 100 910 330 0 0 0> // 43
+            , <&key_physical_attrs 100 100 1020 330 0 0 0> // 44
+            , <&key_physical_attrs 100 100 1130 330 0 0 0> // 45
+            , <&key_physical_attrs 100 100 1240 330 0 0 0> // 46
+            , <&key_physical_attrs 100 100 1350 330 0 0 0> // 47
+            // Thumb row upper
+            , <&key_physical_attrs 100 100 220 470 0 0 0> // 48
+            , <&key_physical_attrs 100 100 330 470 0 0 0> // 49
+            , <&key_physical_attrs 100 100 1020 470 0 0 0> // 50
+            , <&key_physical_attrs 100 100 1130 470 0 0 0> // 51
+            // Thumb row lower
+            , <&key_physical_attrs 100 100 0 580 0 0 0> // 52
+            , <&key_physical_attrs 100 100 110 580 0 0 0> // 53
+            , <&key_physical_attrs 100 100 220 580 0 0 0> // 54
+            , <&key_physical_attrs 100 100 330 580 0 0 0> // 55
+            , <&key_physical_attrs 100 100 1020 580 0 0 0> // 56
+            , <&key_physical_attrs 100 100 1130 580 0 0 0> // 57
+            , <&key_physical_attrs 100 100 1240 580 0 0 0> // 58
+            , <&key_physical_attrs 100 100 1350 580 0 0 0> // 59
             ;
     };
 };
