@@ -155,7 +155,7 @@
 
         number_layer {  // 1
             bindings = <
-&kp LBKT      &kp RBKT      &kp COMMA     &kp KP_DIV    &kp KP_MULT   &kp EQUAL       &none          &kp F10        &kp F11        &kp F12        &none          &none
+&kp LBKT      &kp RBKT      &kp COMMA     &kp KP_DIVIDE    &kp KP_MULTIPLY   &kp EQUAL       &none          &kp F10        &kp F11        &kp F12        &none          &none
 &kp LBRC      &kp RBRC      &kpn7         &kpn8         &kpn9         &kpminus        &none          &kp F7         &kp F8         &kp F9         &none          &none
 &kp LPAR      &kp RPAR      &kpn4         &kpn5         &kpn6         &kpplus         &none          &kp F4         &kp F5         &kp F6         &none          &none
 &kp LT        &kp GT        &kpn1         &kpn2         &kpn3         &kp ENTER       &none          &kp F1         &kp F2         &kp F3         &none          &kp BSLH
